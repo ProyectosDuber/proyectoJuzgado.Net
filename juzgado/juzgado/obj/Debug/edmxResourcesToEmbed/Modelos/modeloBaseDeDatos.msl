@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="JuzgadoModelStoreContainer" CdmEntityContainer="JuzgadoEntities">
+    <EntitySetMapping Name="Involucrados">
+      <EntityTypeMapping TypeName="JuzgadoModel.Involucrados">
+        <MappingFragment StoreEntitySet="Involucrados">
+          <ScalarProperty Name="idInvolucrados" ColumnName="idInvolucrados" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="procesoJudicial" ColumnName="procesoJudicial" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Log">
+      <EntityTypeMapping TypeName="JuzgadoModel.Log">
+        <MappingFragment StoreEntitySet="Log">
+          <ScalarProperty Name="idLog" ColumnName="idLog" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="clave" ColumnName="clave" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="procesosJudiciales">
+      <EntityTypeMapping TypeName="JuzgadoModel.procesosJudiciales">
+        <MappingFragment StoreEntitySet="procesosJudiciales">
+          <ScalarProperty Name="idProcesosJudiciales" ColumnName="idProcesosJudiciales" />
+          <ScalarProperty Name="tipoProceso" ColumnName="tipoProceso" />
+          <ScalarProperty Name="fechaInicio" ColumnName="fechaInicio" />
+          <ScalarProperty Name="asunto" ColumnName="asunto" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+          <ScalarProperty Name="fechaFinal" ColumnName="fechaFinal" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Seguimientos">
+      <EntityTypeMapping TypeName="JuzgadoModel.Seguimientos">
+        <MappingFragment StoreEntitySet="Seguimientos">
+          <ScalarProperty Name="idSeguimiento" ColumnName="idSeguimiento" />
+          <ScalarProperty Name="procesoJudicial" ColumnName="procesoJudicial" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+          <ScalarProperty Name="tipoArreglo" ColumnName="tipoArreglo" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipoArreglo">
+      <EntityTypeMapping TypeName="JuzgadoModel.tipoArreglo">
+        <MappingFragment StoreEntitySet="tipoArreglo">
+          <ScalarProperty Name="idTipoArreglo" ColumnName="idTipoArreglo" />
+          <ScalarProperty Name="tipoArreglo1" ColumnName="tipoArreglo" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipoProceso">
+      <EntityTypeMapping TypeName="JuzgadoModel.tipoProceso">
+        <MappingFragment StoreEntitySet="tipoProceso">
+          <ScalarProperty Name="idTipoProceso" ColumnName="idTipoProceso" />
+          <ScalarProperty Name="tipoProceso1" ColumnName="tipoProceso" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="JuzgadoModel.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="nombres" ColumnName="nombres" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="tipoDocumento" ColumnName="tipoDocumento" />
+          <ScalarProperty Name="documento" ColumnName="documento" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

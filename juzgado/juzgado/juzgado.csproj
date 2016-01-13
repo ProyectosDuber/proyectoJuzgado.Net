@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0CCC435E-F3AE-4C9A-9409-B44F9AA17615}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>juzgado</RootNamespace>
+    <AssemblyName>juzgado</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="JuzgadoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JuzgadoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Involucrados.cs">
+      <DependentUpon>modeloBaseDeDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Log.cs">
+      <DependentUpon>modeloBaseDeDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\modeloBaseDeDatos.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>modeloBaseDeDatos.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\modeloBaseDeDatos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>modeloBaseDeDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\modeloBaseDeDatos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>modeloBaseDeDatos.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\procesosJudiciales.cs">
+      <DependentUpon>modeloBaseDeDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Seguimientos.cs">
+      <DependentUpon>modeloBaseDeDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\tipoArreglo.cs">
+      <DependentUpon>modeloBaseDeDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\tipoProceso.cs">
+      <DependentUpon>modeloBaseDeDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Usuarios.cs">
+      <DependentUpon>modeloBaseDeDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Login\frmProcesosJudiciales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Login\frmProcesosJudiciales.Designer.cs">
+      <DependentUpon>frmProcesosJudiciales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Login\frmTipoArreglo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Login\frmTipoArreglo.Designer.cs">
+      <DependentUpon>frmTipoArreglo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Login\frmTiposDeProcesos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Login\frmTiposDeProcesos.Designer.cs">
+      <DependentUpon>frmTiposDeProcesos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Login\frmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Login\frmUsuarios.Designer.cs">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Login\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Login\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vistas\Login\Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Login\Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Login\prueba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Login\prueba.Designer.cs">
+      <DependentUpon>prueba.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Vistas\Login\frmProcesosJudiciales.resx">
+      <DependentUpon>frmProcesosJudiciales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Login\frmTipoArreglo.resx">
+      <DependentUpon>frmTipoArreglo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Login\frmTiposDeProcesos.resx">
+      <DependentUpon>frmTiposDeProcesos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Login\frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Login\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Vistas\Login\Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Login\prueba.resx">
+      <DependentUpon>prueba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Modelos\modeloBaseDeDatos.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>modeloBaseDeDatos.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="JuzgadoDataSet.xsc">
+      <DependentUpon>JuzgadoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="JuzgadoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>JuzgadoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="JuzgadoDataSet.xss">
+      <DependentUpon>JuzgadoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Modelos\modeloBaseDeDatos.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>modeloBaseDeDatos.edmx</DependentUpon>
+      <LastGenOutput>modeloBaseDeDatos.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Modelos\modeloBaseDeDatos.edmx.diagram">
+      <DependentUpon>modeloBaseDeDatos.edmx</DependentUpon>
+    </None>
+    <None Include="Modelos\modeloBaseDeDatos.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>modeloBaseDeDatos.edmx</DependentUpon>
+      <LastGenOutput>modeloBaseDeDatos.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\juzgado.Modelos.Involucrados.datasource" />
+    <None Include="Properties\DataSources\juzgado.Modelos.JuzgadoEntities.datasource" />
+    <None Include="Properties\DataSources\juzgado.Modelos.Log.datasource" />
+    <None Include="Properties\DataSources\juzgado.Modelos.procesosJudiciales.datasource" />
+    <None Include="Properties\DataSources\juzgado.Modelos.Seguimientos.datasource" />
+    <None Include="Properties\DataSources\juzgado.Modelos.tipoArreglo.datasource" />
+    <None Include="Properties\DataSources\juzgado.Modelos.tipoProceso.datasource" />
+    <None Include="Properties\DataSources\juzgado.Modelos.Usuarios.datasource" />
+    <None Include="Properties\DataSources\juzgado.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\juzgado.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\juzgado.Vistas.Login.frmTipoArreglo.datasource" />
+    <None Include="Properties\DataSources\juzgado.Vistas.Login.Principal.datasource" />
+    <None Include="Properties\DataSources\Login.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iconos\ico\panel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iconos\ico\button\20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iconos\1452634100_file_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iconos\no.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iconos\1452637259_interface_menu_-03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iconos\ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iconos\ico\12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iconos\ico\infobar\misc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iconos\ico\infobar\tab-round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iconos\ico\infobar\red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iconos\ico\infobar\green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iconos\ico\infobar\yelow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iconos\indicator4.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iconos\indicator3.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iconos\green_ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iconos\1452670046_icon-136-document-edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iconos\1452670133_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iconos\1452670274_file_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iconos\1452670387_save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iconos\1452670449_save_as-2.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

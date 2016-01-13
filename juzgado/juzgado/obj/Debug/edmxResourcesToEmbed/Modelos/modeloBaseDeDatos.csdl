@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JuzgadoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Involucrados">
+    <Key>
+      <PropertyRef Name="idInvolucrados" />
+    </Key>
+    <Property Name="idInvolucrados" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="usuario" Type="Int32" Nullable="false" />
+    <Property Name="procesoJudicial" Type="Int32" Nullable="false" />
+    <Property Name="estado" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="procesosJudiciales" Relationship="Self.FK_Involucrados_procesosJudiciales" FromRole="Involucrados" ToRole="procesosJudiciales" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.FK_Involucrados_Usuarios" FromRole="Involucrados" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="idLog" />
+    </Key>
+    <Property Name="idLog" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="usuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="clave" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="procesosJudiciales">
+    <Key>
+      <PropertyRef Name="idProcesosJudiciales" />
+    </Key>
+    <Property Name="idProcesosJudiciales" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipoProceso" Type="Int32" Nullable="false" />
+    <Property Name="fechaInicio" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="asunto" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="observaciones" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="fechaFinal" Type="DateTime" Precision="3" />
+    <Property Name="estado" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Involucrados" Relationship="Self.FK_Involucrados_procesosJudiciales" FromRole="procesosJudiciales" ToRole="Involucrados" />
+    <NavigationProperty Name="tipoProceso1" Relationship="Self.FK_procesosJudiciales_tipoProceso" FromRole="procesosJudiciales" ToRole="tipoProceso" />
+    <NavigationProperty Name="Seguimientos" Relationship="Self.FK_Seguimientos_procesosJudiciales" FromRole="procesosJudiciales" ToRole="Seguimientos" />
+  </EntityType>
+  <EntityType Name="Seguimientos">
+    <Key>
+      <PropertyRef Name="idSeguimiento" />
+    </Key>
+    <Property Name="idSeguimiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="procesoJudicial" Type="Int32" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="observaciones" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tipoArreglo" Type="Int32" Nullable="false" />
+    <Property Name="estado" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="procesosJudiciales" Relationship="Self.FK_Seguimientos_procesosJudiciales" FromRole="Seguimientos" ToRole="procesosJudiciales" />
+    <NavigationProperty Name="tipoArreglo1" Relationship="Self.FK_Seguimientos_tipoArreglo" FromRole="Seguimientos" ToRole="tipoArreglo" />
+  </EntityType>
+  <EntityType Name="tipoArreglo">
+    <Key>
+      <PropertyRef Name="idTipoArreglo" />
+    </Key>
+    <Property Name="idTipoArreglo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipoArreglo1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="estado" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Seguimientos" Relationship="Self.FK_Seguimientos_tipoArreglo" FromRole="tipoArreglo" ToRole="Seguimientos" />
+  </EntityType>
+  <EntityType Name="tipoProceso">
+    <Key>
+      <PropertyRef Name="idTipoProceso" />
+    </Key>
+    <Property Name="idTipoProceso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipoProceso1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="estado" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="procesosJudiciales" Relationship="Self.FK_procesosJudiciales_tipoProceso" FromRole="tipoProceso" ToRole="procesosJudiciales" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tipoDocumento" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="documento" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="estado" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Involucrados" Relationship="Self.FK_Involucrados_Usuarios" FromRole="Usuarios" ToRole="Involucrados" />
+  </EntityType>
+  <Association Name="FK_Involucrados_procesosJudiciales">
+    <End Role="procesosJudiciales" Type="Self.procesosJudiciales" Multiplicity="1" />
+    <End Role="Involucrados" Type="Self.Involucrados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="procesosJudiciales">
+        <PropertyRef Name="idProcesosJudiciales" />
+      </Principal>
+      <Dependent Role="Involucrados">
+        <PropertyRef Name="procesoJudicial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Involucrados_Usuarios">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+    <End Role="Involucrados" Type="Self.Involucrados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Involucrados">
+        <PropertyRef Name="usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_procesosJudiciales_tipoProceso">
+    <End Role="tipoProceso" Type="Self.tipoProceso" Multiplicity="1" />
+    <End Role="procesosJudiciales" Type="Self.procesosJudiciales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipoProceso">
+        <PropertyRef Name="idTipoProceso" />
+      </Principal>
+      <Dependent Role="procesosJudiciales">
+        <PropertyRef Name="tipoProceso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Seguimientos_procesosJudiciales">
+    <End Role="procesosJudiciales" Type="Self.procesosJudiciales" Multiplicity="1" />
+    <End Role="Seguimientos" Type="Self.Seguimientos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="procesosJudiciales">
+        <PropertyRef Name="idProcesosJudiciales" />
+      </Principal>
+      <Dependent Role="Seguimientos">
+        <PropertyRef Name="procesoJudicial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Seguimientos_tipoArreglo">
+    <End Role="tipoArreglo" Type="Self.tipoArreglo" Multiplicity="1" />
+    <End Role="Seguimientos" Type="Self.Seguimientos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipoArreglo">
+        <PropertyRef Name="idTipoArreglo" />
+      </Principal>
+      <Dependent Role="Seguimientos">
+        <PropertyRef Name="tipoArreglo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="JuzgadoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Involucrados" EntityType="Self.Involucrados" />
+    <EntitySet Name="Log" EntityType="Self.Log" />
+    <EntitySet Name="procesosJudiciales" EntityType="Self.procesosJudiciales" />
+    <EntitySet Name="Seguimientos" EntityType="Self.Seguimientos" />
+    <EntitySet Name="tipoArreglo" EntityType="Self.tipoArreglo" />
+    <EntitySet Name="tipoProceso" EntityType="Self.tipoProceso" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+    <AssociationSet Name="FK_Involucrados_procesosJudiciales" Association="Self.FK_Involucrados_procesosJudiciales">
+      <End Role="procesosJudiciales" EntitySet="procesosJudiciales" />
+      <End Role="Involucrados" EntitySet="Involucrados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Involucrados_Usuarios" Association="Self.FK_Involucrados_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Involucrados" EntitySet="Involucrados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_procesosJudiciales_tipoProceso" Association="Self.FK_procesosJudiciales_tipoProceso">
+      <End Role="tipoProceso" EntitySet="tipoProceso" />
+      <End Role="procesosJudiciales" EntitySet="procesosJudiciales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Seguimientos_procesosJudiciales" Association="Self.FK_Seguimientos_procesosJudiciales">
+      <End Role="procesosJudiciales" EntitySet="procesosJudiciales" />
+      <End Role="Seguimientos" EntitySet="Seguimientos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Seguimientos_tipoArreglo" Association="Self.FK_Seguimientos_tipoArreglo">
+      <End Role="tipoArreglo" EntitySet="tipoArreglo" />
+      <End Role="Seguimientos" EntitySet="Seguimientos" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

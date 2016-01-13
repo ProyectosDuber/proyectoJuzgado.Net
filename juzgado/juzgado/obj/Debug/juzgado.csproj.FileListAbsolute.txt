@@ -1,0 +1,38 @@
+c:\users\duber\documents\visual studio 2013\Projects\juzgado\juzgado\bin\Debug\juzgado.exe.config
+c:\users\duber\documents\visual studio 2013\Projects\juzgado\juzgado\bin\Debug\juzgado.exe
+c:\users\duber\documents\visual studio 2013\Projects\juzgado\juzgado\bin\Debug\juzgado.pdb
+c:\users\duber\documents\visual studio 2013\Projects\juzgado\juzgado\obj\Debug\juzgado.csprojResolveAssemblyReference.cache
+c:\users\duber\documents\visual studio 2013\Projects\juzgado\juzgado\obj\Debug\juzgado.Properties.Resources.resources
+c:\users\duber\documents\visual studio 2013\Projects\juzgado\juzgado\obj\Debug\juzgado.csproj.GenerateResource.Cache
+c:\users\duber\documents\visual studio 2013\Projects\juzgado\juzgado\obj\Debug\juzgado.exe
+c:\users\duber\documents\visual studio 2013\Projects\juzgado\juzgado\obj\Debug\juzgado.pdb
+C:\Users\Duber\Documents\Visual Studio 2013\Projects\juzgado\juzgado\obj\Debug\juzgado.Login.resources
+C:\Users\Duber\Documents\Visual Studio 2013\Projects\juzgado\juzgado\bin\Debug\EntityFramework.dll
+C:\Users\Duber\Documents\Visual Studio 2013\Projects\juzgado\juzgado\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Duber\Documents\Visual Studio 2013\Projects\juzgado\juzgado\bin\Debug\EntityFramework.xml
+C:\Users\Duber\Documents\Visual Studio 2013\Projects\juzgado\juzgado\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Duber\Documents\Visual Studio 2013\Projects\juzgado\juzgado\obj\Debug\juzgado.Vistas.Login.Principal.resources
+C:\Users\Duber\Documents\Visual Studio 2013\Projects\juzgado\juzgado\obj\Debug\juzgado.Vistas.Login.frmTipoArreglo.resources
+C:\Users\Duber\Documents\Visual Studio 2013\Projects\juzgado\juzgado\obj\Debug\juzgado.Vistas.Login.prueba.resources
+C:\Users\Duber\Documents\Visual Studio 2013\Projects\juzgado\juzgado\obj\Debug\juzgado.Vistas.Login.frmTiposDeProcesos.resources
+C:\Users\Duber\Documents\Visual Studio 2013\Projects\juzgado\juzgado\obj\Debug\juzgado.Vistas.Login.frmUsuarios.resources
+C:\Users\Duber\Documents\Visual Studio 2013\Projects\juzgado\juzgado\obj\Debug\juzgado.Vistas.Login.frmProcesosJudiciales.resources
+C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgado\juzgado\bin\Debug\juzgado.exe.config
+C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgado\juzgado\obj\Debug\juzgado.exe
+C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgado\juzgado\obj\Debug\juzgado.pdb
+C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgado\juzgado\bin\Debug\juzgado.exe
+C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgado\juzgado\bin\Debug\juzgado.pdb
+C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgado\juzgado\bin\Debug\EntityFramework.dll
+C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgado\juzgado\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgado\juzgado\bin\Debug\EntityFramework.xml
+C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgado\juzgado\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgado\juzgado\obj\Debug\juzgado.csprojResolveAssemblyReference.cache
+C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgado\juzgado\obj\Debug\juzgado.Vistas.Login.frmProcesosJudiciales.resources
+C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgado\juzgado\obj\Debug\juzgado.Vistas.Login.frmTipoArreglo.resources
+C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgado\juzgado\obj\Debug\juzgado.Vistas.Login.frmTiposDeProcesos.resources
+C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgado\juzgado\obj\Debug\juzgado.Vistas.Login.frmUsuarios.resources
+C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgado\juzgado\obj\Debug\juzgado.Login.resources
+C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgado\juzgado\obj\Debug\juzgado.Properties.Resources.resources
+C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgado\juzgado\obj\Debug\juzgado.Vistas.Login.Principal.resources
+C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgado\juzgado\obj\Debug\juzgado.Vistas.Login.prueba.resources
+C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgado\juzgado\obj\Debug\juzgado.csproj.GenerateResource.Cache
