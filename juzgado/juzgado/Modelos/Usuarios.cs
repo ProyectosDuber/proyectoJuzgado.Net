@@ -11,6 +11,7 @@ namespace juzgado.Modelos
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     
     public partial class Usuarios
     {
@@ -31,5 +32,24 @@ namespace juzgado.Modelos
         public string estado { get; set; }
     
         public virtual ICollection<Involucrados> Involucrados { get; set; }
+        public static IQueryable<Usuarios> selectAll(JuzgadoEntities db)
+        {
+
+
+            var query = from lo in db.Usuarios where lo.estado.Equals("activo") select lo;
+
+            try
+            {
+
+                return query;
+
+
+            }
+            catch (Exception e)
+            {
+                return null;
+
+            }
+        }
     }
 }
