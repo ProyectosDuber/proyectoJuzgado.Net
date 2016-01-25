@@ -36,7 +36,7 @@ namespace juzgado.Vistas.Login
             foreach (var item in listaUsuarios)
             {
 
-                dgvUsuarios.Rows.Add(item, item.nombres, item.apellidos, item.tipoDocumento, item.documento, item.telefono, item.email, item.direccion, item.fecha.Date,3);
+                dgvUsuarios.Rows.Add(item, item.nombres, item.apellidos, item.tipoDocumento, item.documento, item.telefono, item.email, item.direccion,String.Format("{0:dd-MM-yyyy}", item.fecha) ,3);
             }
         }
 
