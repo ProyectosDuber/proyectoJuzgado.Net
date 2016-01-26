@@ -132,6 +132,12 @@
     <Compile Include="Vistas\Login\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Usuarios_crud\frmNuevoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Usuarios_crud\frmNuevoUsuario.Designer.cs">
+      <DependentUpon>frmNuevoUsuario.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Vistas\Login\frmProcesosJudiciales.resx">
       <DependentUpon>frmProcesosJudiciales.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +165,9 @@
     </Compile>
     <EmbeddedResource Include="Vistas\Login\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Usuarios_crud\frmNuevoUsuario.resx">
+      <DependentUpon>frmNuevoUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Modelos\modeloBaseDeDatos.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -278,6 +287,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\Iconos\1452670449_save_as-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iconos\Fondos Wallpaper Gratis Abstractos %28224%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iconos\images.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

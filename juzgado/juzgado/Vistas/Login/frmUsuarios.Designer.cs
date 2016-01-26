@@ -30,10 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.menuCrud = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsNuevo = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsEditar = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsEliminar = new System.Windows.Forms.ToolStripMenuItem();
             this.objeto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +40,10 @@
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menuCrud = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsNuevo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsEditar = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsEliminar = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.menuCrud.SuspendLayout();
             this.SuspendLayout();
@@ -74,36 +74,6 @@
             this.dgvUsuarios.Size = new System.Drawing.Size(593, 562);
             this.dgvUsuarios.TabIndex = 5;
             this.dgvUsuarios.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvUsuarios_CellMouseDown);
-            // 
-            // menuCrud
-            // 
-            this.menuCrud.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsNuevo,
-            this.tsEditar,
-            this.tsEliminar});
-            this.menuCrud.Name = "contextMenuStrip1";
-            this.menuCrud.Size = new System.Drawing.Size(118, 70);
-            // 
-            // tsNuevo
-            // 
-            this.tsNuevo.Image = global::juzgado.Properties.Resources._1452634100_file_add;
-            this.tsNuevo.Name = "tsNuevo";
-            this.tsNuevo.Size = new System.Drawing.Size(117, 22);
-            this.tsNuevo.Text = "Nuevo";
-            // 
-            // tsEditar
-            // 
-            this.tsEditar.Image = global::juzgado.Properties.Resources._20;
-            this.tsEditar.Name = "tsEditar";
-            this.tsEditar.Size = new System.Drawing.Size(117, 22);
-            this.tsEditar.Text = "Editar";
-            // 
-            // tsEliminar
-            // 
-            this.tsEliminar.Image = global::juzgado.Properties.Resources.no;
-            this.tsEliminar.Name = "tsEliminar";
-            this.tsEliminar.Size = new System.Drawing.Size(117, 22);
-            this.tsEliminar.Text = "Eliminar";
             // 
             // objeto
             // 
@@ -163,6 +133,37 @@
             this.Edad.HeaderText = "Edad";
             this.Edad.Name = "Edad";
             // 
+            // menuCrud
+            // 
+            this.menuCrud.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsNuevo,
+            this.tsEditar,
+            this.tsEliminar});
+            this.menuCrud.Name = "contextMenuStrip1";
+            this.menuCrud.Size = new System.Drawing.Size(118, 70);
+            // 
+            // tsNuevo
+            // 
+            this.tsNuevo.Image = global::juzgado.Properties.Resources._1452634100_file_add;
+            this.tsNuevo.Name = "tsNuevo";
+            this.tsNuevo.Size = new System.Drawing.Size(117, 22);
+            this.tsNuevo.Text = "Nuevo";
+            this.tsNuevo.Click += new System.EventHandler(this.tsNuevo_Click);
+            // 
+            // tsEditar
+            // 
+            this.tsEditar.Image = global::juzgado.Properties.Resources._20;
+            this.tsEditar.Name = "tsEditar";
+            this.tsEditar.Size = new System.Drawing.Size(117, 22);
+            this.tsEditar.Text = "Editar";
+            // 
+            // tsEliminar
+            // 
+            this.tsEliminar.Image = global::juzgado.Properties.Resources.no;
+            this.tsEliminar.Name = "tsEliminar";
+            this.tsEliminar.Size = new System.Drawing.Size(117, 22);
+            this.tsEliminar.Text = "Eliminar";
+            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,7 +184,6 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvUsuarios;
         private System.Windows.Forms.ContextMenuStrip menuCrud;
         private System.Windows.Forms.ToolStripMenuItem tsNuevo;
         private System.Windows.Forms.ToolStripMenuItem tsEditar;
@@ -198,5 +198,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Edad;
+        public System.Windows.Forms.DataGridView dgvUsuarios;
     }
 }

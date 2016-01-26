@@ -8,14 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using juzgado.Vistas.Usuarios_crud;
 namespace juzgado.Vistas.Login
 {
     public partial class frmUsuarios : Principal
     {
         public JuzgadoEntities db = new JuzgadoEntities();
        
-        private DataGridViewRow filaSeleccionada = null;
+        public DataGridViewRow filaSeleccionada = null;
         public frmUsuarios()
         {
             InitializeComponent();
@@ -60,6 +60,13 @@ namespace juzgado.Vistas.Login
 
                 dgvUsuarios.ContextMenuStrip = null;
             }
+        }
+
+        private void tsNuevo_Click(object sender, EventArgs e)
+        {
+            
+            frmNuevoUsuario obj = new frmNuevoUsuario(this);
+            obj.Visible = true;
         }
     }
 }

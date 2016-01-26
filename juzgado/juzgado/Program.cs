@@ -1,4 +1,5 @@
 ﻿using juzgado.Vistas.Login;
+using juzgado.Vistas.Usuarios_crud;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace juzgado
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmTipoArreglo());
+            Application.Run(new frmUsuarios());
         }
     }
 }
