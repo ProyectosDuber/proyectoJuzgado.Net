@@ -132,6 +132,12 @@
     <Compile Include="Vistas\Login\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Usuarios_crud\frmEditarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Usuarios_crud\frmEditarUsuario.Designer.cs">
+      <DependentUpon>frmEditarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Usuarios_crud\frmNuevoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     </Compile>
     <EmbeddedResource Include="Vistas\Login\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Usuarios_crud\frmEditarUsuario.resx">
+      <DependentUpon>frmEditarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Usuarios_crud\frmNuevoUsuario.resx">
       <DependentUpon>frmNuevoUsuario.cs</DependentUpon>

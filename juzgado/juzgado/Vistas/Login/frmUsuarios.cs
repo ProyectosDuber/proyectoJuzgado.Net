@@ -68,5 +68,29 @@ namespace juzgado.Vistas.Login
             frmNuevoUsuario obj = new frmNuevoUsuario(this,  db);
             obj.Visible = true;
         }
+
+        private void tsEditar_Click(object sender, EventArgs e)
+        {
+            frmEditarUsuario obj = new frmEditarUsuario(this, db);
+            obj.Visible = true;
+        }
+
+        private void tsEliminar_Click(object sender, EventArgs e)
+        {
+            //btn eliminar
+            DialogResult result2 = MessageBox.Show("Desea Eliminar El Usuario?", "Eliminar",
+                                                          MessageBoxButtons.YesNoCancel,
+                                                          MessageBoxIcon.Question);
+            if (result2 == DialogResult.Yes)
+            {
+                DataGridViewRow fila = dgvUsuarios.CurrentRow;
+                Usuarios objUsuario = (Usuarios)fila.Cells[0].Value;
+                objUsuario.estado = "eliminado";
+                db.SaveChanges();
+
+                dgvUsuarios.Rows.Remove(fila);
+
+            }
+        }
     }
 }

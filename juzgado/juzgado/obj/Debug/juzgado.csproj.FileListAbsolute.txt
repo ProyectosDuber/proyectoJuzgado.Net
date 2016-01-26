@@ -36,3 +36,4 @@ C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgad
 C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgado\juzgado\obj\Debug\juzgado.Vistas.Login.Principal.resources
 C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgado\juzgado\obj\Debug\juzgado.csproj.GenerateResource.Cache
 C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgado\juzgado\obj\Debug\juzgado.Vistas.Usuarios_crud.frmNuevoUsuario.resources
+C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgado\juzgado\obj\Debug\juzgado.Vistas.Usuarios_crud.frmEditarUsuario.resources
