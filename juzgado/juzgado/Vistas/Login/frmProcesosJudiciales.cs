@@ -33,22 +33,50 @@ namespace juzgado.Vistas.Login
             foreach (var item in listaUsuarios)
             {
 
-                dgvUsuarios.Rows.Add(item, item.nombres, item.apellidos, item.documento);
+                dgvUsuarios.Rows.Add(item, item.nombres, item.apellidos, item.documento,false,"Sin Agregar");
             }
         }
         private void agregarUsuariosSeleccionados()
         {
             var rows = dgvUsuarios.Rows;
+            var rowsInvolucrados = dgvInvolucrados.Rows;
             foreach (DataGridViewRow fila in rows)
             {
                 fila.Cells[4].ReadOnly = true;
                 DataGridViewCheckBoxCell celda = (DataGridViewCheckBoxCell)fila.Cells[4];
 
+               
+
+
                 if (Convert.ToBoolean(celda.Value) ==true)
                 {
-                    dgvInvolucrados.Rows.Add((Usuarios)fila.Cells[0].Value, fila.Cells[1].Value, fila.Cells[2].Value, fila.Cells[3].Value);
+                    bool repetido = false;
+                    foreach (DataGridViewRow filaInvolucrado in rowsInvolucrados)
+                    {
+                        Usuarios objInvolucrado = (Usuarios)filaInvolucrado.Cells[0].Value;
+                        Usuarios objUsuario = (Usuarios)fila.Cells[0].Value;
+                        if (objInvolucrado.idUsuario == objUsuario.idUsuario)
+                        {
+                            repetido = true;
+                            
+                        }
+                    }
+                    if (repetido == false)
+                    {
+                      
+                        
+                        fila.Cells[5].Value = "Agregado";
+                        dgvInvolucrados.Rows.Add((Usuarios)fila.Cells[0].Value, fila.Cells[1].Value, fila.Cells[2].Value, fila.Cells[3].Value);
+                        DataGridViewComboBoxCell c = (DataGridViewComboBoxCell)dgvInvolucrados.Rows[dgvInvolucrados.Rows.Count - 1].Cells[4];
+                        c.Value = "Demandante";
+                    }
+                     fila.Cells[4].ReadOnly = true;
                 }
-                fila.Cells[4].ReadOnly = false;
+                else
+                {
+                    fila.Cells[4].ReadOnly = false;
+                }
+                
             }
         }
         private void todosSonDemandantes()

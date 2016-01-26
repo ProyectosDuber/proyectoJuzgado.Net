@@ -54,7 +54,7 @@ namespace juzgado.Modelos
         }
         public static bool verificarDocumento(JuzgadoEntities db,int idUsuario,String documento)
         {
-            //lo.estado.Equals("activo") && lo.documento.Equals(usuario.documento) && 
+             
 
             int numero = (from lo in db.Usuarios where lo.estado == "activo" && lo.idUsuario != idUsuario && lo.documento == documento select lo).Count();
 
