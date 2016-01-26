@@ -29,7 +29,7 @@ namespace juzgado.Vistas.Login
 
         }
         //para el constructor
-        private void llenarTabla()
+        public void llenarTabla()
         {
             var listaUsuarios = Usuarios.selectAll(db);
 
@@ -64,8 +64,8 @@ namespace juzgado.Vistas.Login
 
         private void tsNuevo_Click(object sender, EventArgs e)
         {
-            
-            frmNuevoUsuario obj = new frmNuevoUsuario(this);
+
+            frmNuevoUsuario obj = new frmNuevoUsuario(this,  db);
             obj.Visible = true;
         }
     }
