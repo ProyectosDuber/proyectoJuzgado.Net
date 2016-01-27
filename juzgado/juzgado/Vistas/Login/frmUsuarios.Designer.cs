@@ -73,6 +73,7 @@
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.Size = new System.Drawing.Size(593, 562);
             this.dgvUsuarios.TabIndex = 5;
+            this.dgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentClick);
             this.dgvUsuarios.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvUsuarios_CellMouseDown);
             // 
             // objeto
@@ -140,13 +141,13 @@
             this.tsEditar,
             this.tsEliminar});
             this.menuCrud.Name = "contextMenuStrip1";
-            this.menuCrud.Size = new System.Drawing.Size(153, 92);
+            this.menuCrud.Size = new System.Drawing.Size(118, 70);
             // 
             // tsNuevo
             // 
             this.tsNuevo.Image = global::juzgado.Properties.Resources._1452634100_file_add;
             this.tsNuevo.Name = "tsNuevo";
-            this.tsNuevo.Size = new System.Drawing.Size(152, 22);
+            this.tsNuevo.Size = new System.Drawing.Size(117, 22);
             this.tsNuevo.Text = "Nuevo";
             this.tsNuevo.Click += new System.EventHandler(this.tsNuevo_Click);
             // 
@@ -154,7 +155,7 @@
             // 
             this.tsEditar.Image = global::juzgado.Properties.Resources._20;
             this.tsEditar.Name = "tsEditar";
-            this.tsEditar.Size = new System.Drawing.Size(152, 22);
+            this.tsEditar.Size = new System.Drawing.Size(117, 22);
             this.tsEditar.Text = "Editar";
             this.tsEditar.Click += new System.EventHandler(this.tsEditar_Click);
             // 
@@ -162,7 +163,7 @@
             // 
             this.tsEliminar.Image = global::juzgado.Properties.Resources.no;
             this.tsEliminar.Name = "tsEliminar";
-            this.tsEliminar.Size = new System.Drawing.Size(152, 22);
+            this.tsEliminar.Size = new System.Drawing.Size(117, 22);
             this.tsEliminar.Text = "Eliminar";
             this.tsEliminar.Click += new System.EventHandler(this.tsEliminar_Click);
             // 

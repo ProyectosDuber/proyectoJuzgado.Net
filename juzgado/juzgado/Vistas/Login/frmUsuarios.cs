@@ -92,5 +92,10 @@ namespace juzgado.Vistas.Login
 
             }
         }
+
+        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
