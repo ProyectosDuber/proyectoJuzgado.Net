@@ -92,8 +92,8 @@ namespace juzgado.Vistas.Login
         private void tsNuevo_Click(object sender, EventArgs e)
         {
 
-            dgvUsuarios.BeginEdit(false);
-            agregarUsuariosSeleccionados();
+            //dgvUsuarios.BeginEdit(false);
+            //agregarUsuariosSeleccionados();
            
         }
 
@@ -129,11 +129,11 @@ namespace juzgado.Vistas.Login
 
         private void dgvUsuarios_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewCheckBoxCell celdaCheck = (DataGridViewCheckBoxCell)dgvUsuarios.CurrentCell;
-            if (e.ColumnIndex == celdaCheck.RowIndex && e.RowIndex != -1)
-            {
-                MessageBox.Show(Convert.ToBoolean(celdaCheck.Value)+"");
-            }
+            //DataGridViewCheckBoxCell celdaCheck = (DataGridViewCheckBoxCell)dgvUsuarios.CurrentCell;
+            //if (e.ColumnIndex == celdaCheck.RowIndex && e.RowIndex != -1)
+            //{
+            //    MessageBox.Show(Convert.ToBoolean(celdaCheck.Value)+"");
+            //}
 
         }
 
@@ -155,5 +155,43 @@ namespace juzgado.Vistas.Login
         {
            
         }
+
+        private void dgvUsuarios_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex == 4)
+            {
+                agregarYQuitarInvolucrados(e);
+           }
+        }
+        private void agregarYQuitarInvolucrados(DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewCheckBoxCell celdaCheck = (DataGridViewCheckBoxCell)dgvUsuarios.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            DataGridViewRow fila = dgvUsuarios.Rows[e.RowIndex];
+            if (Convert.ToBoolean(celdaCheck.Value) == false)
+            {
+               
+                fila.Cells[5].Value = "Agregado";
+                dgvInvolucrados.Rows.Add((Usuarios)fila.Cells[0].Value, fila.Cells[1].Value, fila.Cells[2].Value, fila.Cells[3].Value);
+                DataGridViewComboBoxCell c = (DataGridViewComboBoxCell)dgvInvolucrados.Rows[dgvInvolucrados.Rows.Count - 1].Cells[4];
+                c.Value = "Demandante";
+                celdaCheck.Value = true;
+            }
+            else
+            {
+               
+                int id = ((Usuarios)fila.Cells[0].Value).idUsuario;
+                var rows = dgvInvolucrados.Rows;
+                foreach (DataGridViewRow row in rows)
+                {
+                    if (id == ((Usuarios)row.Cells[0].Value).idUsuario)
+                    {
+                        dgvInvolucrados.Rows.Remove(row);
+                    }
+                }
+                celdaCheck.Value = false;
+            }
+            dgvInvolucrados.EndEdit();
+        }
+
     }
 }
