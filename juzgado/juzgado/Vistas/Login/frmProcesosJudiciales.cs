@@ -122,11 +122,12 @@ namespace juzgado.Vistas.Login
         private void tsNuevo_Click(object sender, EventArgs e)
         {
 
-            //dgvUsuarios.BeginEdit(false);
-            //agregarUsuariosSeleccionados();
+            dgvUsuarios.BeginEdit(false);
+            agregarUsuariosSeleccionados();
            
         }
 
+<<<<<<< HEAD
         
 
         private void dgvUsuarios_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
@@ -181,5 +182,65 @@ namespace juzgado.Vistas.Login
             }
         }
 
+=======
+        private void dgvUsuarios_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            //DataGridViewCheckBoxCell celdaCheck = (DataGridViewCheckBoxCell)dgvUsuarios.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            //dgvUsuarios.CurrentCell = celdaCheck;
+            //celdaCheck.ReadOnly = false;
+            //dgvUsuarios.BeginEdit(true);
+            //if (Convert.ToBoolean(celdaCheck.Value) == false)
+            //{
+            //    celdaCheck.Value = true;
+            //}
+            //else
+            //{
+            //    celdaCheck.Value = false;
+            //}
+        }
+
+        private void dgvUsuarios_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            //DataGridViewCheckBoxCell celdaCheck = (DataGridViewCheckBoxCell)dgvUsuarios.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            
+            //if (Convert.ToBoolean(celdaCheck.Value) == false)
+            //{
+            //    MessageBox.Show("asd");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("true");
+            //}
+        }
+
+        private void dgvUsuarios_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewCheckBoxCell celdaCheck = (DataGridViewCheckBoxCell)dgvUsuarios.CurrentCell;
+            if (e.ColumnIndex == celdaCheck.RowIndex && e.RowIndex != -1)
+            {
+                MessageBox.Show(Convert.ToBoolean(celdaCheck.Value)+"");
+            }
+
+        }
+
+        private void dgvUsuarios_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            //DataGridViewCheckBoxCell celdaCheck = (DataGridViewCheckBoxCell)dgvUsuarios.CurrentCell;
+
+            //if (Convert.ToBoolean(celdaCheck.Value) == false)
+            //{
+            //    MessageBox.Show("false");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("true");
+            //}
+        }
+
+        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+>>>>>>> parent of 7a30b22... evento de seleccion y desseleccion de checkbox dataGridView :D completo jejejjejej
     }
 }
