@@ -186,6 +186,8 @@ namespace juzgado.Vistas.Login
                     if (id == ((Usuarios)row.Cells[0].Value).idUsuario)
                     {
                         dgvInvolucrados.Rows.Remove(row);
+                        fila.Cells[5].Value = "Sin Agregar";
+                        break;
                     }
                 }
                 celdaCheck.Value = false;
