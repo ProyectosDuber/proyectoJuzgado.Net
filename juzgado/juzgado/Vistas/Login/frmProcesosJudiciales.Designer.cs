@@ -45,12 +45,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.seleccion = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuUsuarios = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsNuevo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsEditar = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,17 +56,13 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Papel = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-<<<<<<< HEAD
-            this.txBusqueda = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.seleccion = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-=======
-            this.textBox1 = new System.Windows.Forms.TextBox();
->>>>>>> parent of 7a30b22... evento de seleccion y desseleccion de checkbox dataGridView :D completo jejejjejej
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProcesosJudiciales)).BeginInit();
@@ -239,55 +229,16 @@
             this.dgvUsuarios.ContextMenuStrip = this.menuUsuarios;
             this.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvUsuarios.Location = new System.Drawing.Point(0, 0);
-            this.dgvUsuarios.MultiSelect = false;
             this.dgvUsuarios.Name = "dgvUsuarios";
-            this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.Size = new System.Drawing.Size(193, 483);
             this.dgvUsuarios.TabIndex = 7;
-<<<<<<< HEAD
-=======
             this.dgvUsuarios.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvUsuarios_CellBeginEdit);
             this.dgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentClick);
             this.dgvUsuarios.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellEndEdit);
+            this.dgvUsuarios.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvUsuarios_CellMouseUp);
             this.dgvUsuarios.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellValueChanged);
             this.dgvUsuarios.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvUsuarios_CurrentCellDirtyStateChanged);
->>>>>>> parent of 7a30b22... evento de seleccion y desseleccion de checkbox dataGridView :D completo jejejjejej
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Nombres";
-            this.dataGridViewTextBoxColumn6.MaxInputLength = 50;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "Apellidos";
-            this.dataGridViewTextBoxColumn7.MaxInputLength = 50;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "Documento";
-            this.dataGridViewTextBoxColumn8.MaxInputLength = 15;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // seleccion
-            // 
-            this.seleccion.HeaderText = "Involucrado";
-            this.seleccion.Name = "seleccion";
-            this.seleccion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.seleccion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
             // 
             // menuUsuarios
             // 
@@ -382,20 +333,56 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = global::juzgado.Properties.Resources.Fondos_Wallpaper_Gratis_Abstractos__224_;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.txBusqueda);
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(579, 47);
             this.panel1.TabIndex = 0;
             // 
-            // txBusqueda
+            // textBox1
             // 
-            this.txBusqueda.Location = new System.Drawing.Point(12, 12);
-            this.txBusqueda.Name = "txBusqueda";
-            this.txBusqueda.Size = new System.Drawing.Size(171, 20);
-            this.txBusqueda.TabIndex = 0;
-            this.txBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
+            this.textBox1.Location = new System.Drawing.Point(12, 12);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(171, 20);
+            this.textBox1.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Nombres";
+            this.dataGridViewTextBoxColumn6.MaxInputLength = 50;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Apellidos";
+            this.dataGridViewTextBoxColumn7.MaxInputLength = 50;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "Documento";
+            this.dataGridViewTextBoxColumn8.MaxInputLength = 15;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // seleccion
+            // 
+            this.seleccion.HeaderText = "Involucrado";
+            this.seleccion.Name = "seleccion";
+            this.seleccion.ReadOnly = true;
+            this.seleccion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.seleccion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
             // 
             // frmProcesosJudiciales
             // 
@@ -444,7 +431,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Edad;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txBusqueda;
+        private System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.DataGridView dgvUsuarios;
         public System.Windows.Forms.DataGridView dgvInvolucrados;
         private System.Windows.Forms.ContextMenuStrip menuUsuarios;
