@@ -36,6 +36,36 @@ namespace juzgado.Vistas.Login
                 dgvUsuarios.Rows.Add(item, item.nombres, item.apellidos, item.documento,false,"Sin Agregar");
             }
         }
+
+        public void llenarTablaPorDocumento()
+        {
+            var listaUsuarios = Usuarios.buscarPorDocumento(db,txBusqueda.Text);
+
+            foreach (var item in listaUsuarios)
+            {
+
+                int id = item.idUsuario;
+                var rows = dgvInvolucrados.Rows;
+                bool esInvolucrado = false;
+                foreach (DataGridViewRow row in rows)
+                {
+                    if (id == ((Usuarios)row.Cells[0].Value).idUsuario)
+                    {
+                        esInvolucrado = true;
+                        break;
+                    }
+                }
+                if (esInvolucrado == true)
+                {
+                    dgvUsuarios.Rows.Add(item, item.nombres, item.apellidos, item.documento, true, "Agregado");
+                }
+                else
+                {
+                    dgvUsuarios.Rows.Add(item, item.nombres, item.apellidos, item.documento, false, "Sin Agregar");
+                }
+                
+            }
+        }
         private void agregarUsuariosSeleccionados()
         {
             var rows = dgvUsuarios.Rows;
@@ -97,64 +127,7 @@ namespace juzgado.Vistas.Login
            
         }
 
-        private void dgvUsuarios_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
-        {
-            //DataGridViewCheckBoxCell celdaCheck = (DataGridViewCheckBoxCell)dgvUsuarios.Rows[e.RowIndex].Cells[e.ColumnIndex];
-            //dgvUsuarios.CurrentCell = celdaCheck;
-            //celdaCheck.ReadOnly = false;
-            //dgvUsuarios.BeginEdit(true);
-            //if (Convert.ToBoolean(celdaCheck.Value) == false)
-            //{
-            //    celdaCheck.Value = true;
-            //}
-            //else
-            //{
-            //    celdaCheck.Value = false;
-            //}
-        }
-
-        private void dgvUsuarios_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            //DataGridViewCheckBoxCell celdaCheck = (DataGridViewCheckBoxCell)dgvUsuarios.Rows[e.RowIndex].Cells[e.ColumnIndex];
-            
-            //if (Convert.ToBoolean(celdaCheck.Value) == false)
-            //{
-            //    MessageBox.Show("asd");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("true");
-            //}
-        }
-
-        private void dgvUsuarios_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            //DataGridViewCheckBoxCell celdaCheck = (DataGridViewCheckBoxCell)dgvUsuarios.CurrentCell;
-            //if (e.ColumnIndex == celdaCheck.RowIndex && e.RowIndex != -1)
-            //{
-            //    MessageBox.Show(Convert.ToBoolean(celdaCheck.Value)+"");
-            //}
-
-        }
-
-        private void dgvUsuarios_CurrentCellDirtyStateChanged(object sender, EventArgs e)
-        {
-            //DataGridViewCheckBoxCell celdaCheck = (DataGridViewCheckBoxCell)dgvUsuarios.CurrentCell;
-
-            //if (Convert.ToBoolean(celdaCheck.Value) == false)
-            //{
-            //    MessageBox.Show("false");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("true");
-            //}
-        }
-
-        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
+        
 
         private void dgvUsuarios_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -165,13 +138,16 @@ namespace juzgado.Vistas.Login
         }
         private void agregarYQuitarInvolucrados(DataGridViewCellMouseEventArgs e)
         {
+            dgvUsuarios.BeginEdit(true);
+            MessageBox.Show("hola");
             DataGridViewCheckBoxCell celdaCheck = (DataGridViewCheckBoxCell)dgvUsuarios.Rows[e.RowIndex].Cells[e.ColumnIndex];
             DataGridViewRow fila = dgvUsuarios.Rows[e.RowIndex];
+           
             if (Convert.ToBoolean(celdaCheck.Value) == false)
             {
                
                 fila.Cells[5].Value = "Agregado";
-                dgvInvolucrados.Rows.Add((Usuarios)fila.Cells[0].Value, fila.Cells[1].Value, fila.Cells[2].Value, fila.Cells[3].Value);
+               dgvInvolucrados.Rows.Add((Usuarios)fila.Cells[0].Value, fila.Cells[1].Value, fila.Cells[2].Value, fila.Cells[3].Value);
                 DataGridViewComboBoxCell c = (DataGridViewComboBoxCell)dgvInvolucrados.Rows[dgvInvolucrados.Rows.Count - 1].Cells[4];
                 c.Value = "Demandante";
                 celdaCheck.Value = true;
@@ -186,11 +162,23 @@ namespace juzgado.Vistas.Login
                     if (id == ((Usuarios)row.Cells[0].Value).idUsuario)
                     {
                         dgvInvolucrados.Rows.Remove(row);
+                        fila.Cells[5].Value = "Sin Agregar";
+                        break;
                     }
                 }
+                
                 celdaCheck.Value = false;
             }
-            dgvInvolucrados.EndEdit();
+            dgvUsuarios.EndEdit();
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode != Keys.Enter)
+            {
+                dgvUsuarios.Rows.Clear();
+                llenarTablaPorDocumento();
+            }
         }
 
     }

@@ -79,5 +79,25 @@ namespace juzgado.Modelos
 
             }
         }
+        public static IQueryable<Usuarios> buscarPorDocumento(JuzgadoEntities db,string documento)
+        {
+
+
+            var query = from lo in db.Usuarios where lo.estado.Equals("activo") && lo.documento.Contains(documento) select lo;
+
+            try
+            {
+
+
+                return query;
+
+
+            }
+            catch (Exception e)
+            {
+                return null;
+
+            }
+        }
     }
 }

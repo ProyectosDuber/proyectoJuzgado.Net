@@ -56,7 +56,7 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Papel = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txBusqueda = new System.Windows.Forms.TextBox();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -233,12 +233,6 @@
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.Size = new System.Drawing.Size(193, 483);
             this.dgvUsuarios.TabIndex = 7;
-            this.dgvUsuarios.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvUsuarios_CellBeginEdit);
-            this.dgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentClick);
-            this.dgvUsuarios.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellEndEdit);
-            this.dgvUsuarios.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvUsuarios_CellMouseUp);
-            this.dgvUsuarios.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellValueChanged);
-            this.dgvUsuarios.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvUsuarios_CurrentCellDirtyStateChanged);
             // 
             // menuUsuarios
             // 
@@ -333,19 +327,20 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = global::juzgado.Properties.Resources.Fondos_Wallpaper_Gratis_Abstractos__224_;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txBusqueda);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(579, 47);
             this.panel1.TabIndex = 0;
             // 
-            // textBox1
+            // txBusqueda
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(171, 20);
-            this.textBox1.TabIndex = 0;
+            this.txBusqueda.Location = new System.Drawing.Point(12, 12);
+            this.txBusqueda.Name = "txBusqueda";
+            this.txBusqueda.Size = new System.Drawing.Size(171, 20);
+            this.txBusqueda.TabIndex = 0;
+            this.txBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -431,7 +426,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Edad;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txBusqueda;
         public System.Windows.Forms.DataGridView dgvUsuarios;
         public System.Windows.Forms.DataGridView dgvInvolucrados;
         private System.Windows.Forms.ContextMenuStrip menuUsuarios;
