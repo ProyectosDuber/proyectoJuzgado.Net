@@ -193,5 +193,44 @@ namespace juzgado.Vistas.Login
             dgvInvolucrados.EndEdit();
         }
 
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode != Keys.Enter)
+            {
+                dgvUsuarios.Rows.Clear();
+                llenarTablaPorDocumento();
+            }
+    
+        }
+
+        public void llenarTablaPorDocumento()
+        {
+            var listaUsuarios = Usuarios.buscarPorDocumento(db, txBusqueda.Text);
+
+            foreach (var item in listaUsuarios)
+            {
+
+                int id = item.idUsuario;
+                var rows = dgvInvolucrados.Rows;
+                bool esInvolucrado = false;
+                foreach (DataGridViewRow row in rows)
+                {
+                    if (id == ((Usuarios)row.Cells[0].Value).idUsuario)
+                    {
+                        esInvolucrado = true;
+                        break;
+                    }
+                }
+                if (esInvolucrado == true)
+                {
+                    dgvUsuarios.Rows.Add(item, item.nombres, item.apellidos, item.documento, true, "Agregado");
+                }
+                else
+                {
+                    dgvUsuarios.Rows.Add(item, item.nombres, item.apellidos, item.documento, false, "Sin Agregar");
+                }
+
+            }
+        }
     }
 }
