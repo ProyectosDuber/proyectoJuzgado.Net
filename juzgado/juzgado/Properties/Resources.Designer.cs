@@ -153,6 +153,26 @@ namespace juzgado.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap demandado {
+            get {
+                object obj = ResourceManager.GetObject("demandado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap demandante {
+            get {
+                object obj = ResourceManager.GetObject("demandante", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Fondos_Wallpaper_Gratis_Abstractos__224_ {
             get {
                 object obj = ResourceManager.GetObject("Fondos Wallpaper Gratis Abstractos (224)", resourceCulture);

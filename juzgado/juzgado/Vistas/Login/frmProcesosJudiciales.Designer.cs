@@ -61,6 +61,10 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Papel = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.menuInvolucrados = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txBusqueda = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
@@ -74,6 +78,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.menuUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvolucrados)).BeginInit();
+            this.menuInvolucrados.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -233,12 +238,7 @@
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.Size = new System.Drawing.Size(193, 483);
             this.dgvUsuarios.TabIndex = 7;
-            this.dgvUsuarios.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvUsuarios_CellBeginEdit);
-            this.dgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentClick);
-            this.dgvUsuarios.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellEndEdit);
             this.dgvUsuarios.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvUsuarios_CellMouseUp);
-            this.dgvUsuarios.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellValueChanged);
-            this.dgvUsuarios.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvUsuarios_CurrentCellDirtyStateChanged);
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -321,6 +321,7 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn5,
             this.Papel});
+            this.dgvInvolucrados.ContextMenuStrip = this.menuInvolucrados;
             this.dgvInvolucrados.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvInvolucrados.Location = new System.Drawing.Point(0, 0);
             this.dgvInvolucrados.MultiSelect = false;
@@ -328,6 +329,9 @@
             this.dgvInvolucrados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvInvolucrados.Size = new System.Drawing.Size(382, 483);
             this.dgvInvolucrados.TabIndex = 6;
+            this.dgvInvolucrados.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvInvolucrados_CellMouseUp);
+            this.dgvInvolucrados.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvInvolucrados_MouseDown);
+            this.dgvInvolucrados.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvInvolucrados_MouseUp);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -364,6 +368,36 @@
             "Demandado"});
             this.Papel.Name = "Papel";
             this.Papel.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // menuInvolucrados
+            // 
+            this.menuInvolucrados.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3});
+            this.menuInvolucrados.Name = "contextMenuStrip1";
+            this.menuInvolucrados.Size = new System.Drawing.Size(206, 70);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Image = global::juzgado.Properties.Resources._1452634100_file_add;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(205, 22);
+            this.toolStripMenuItem1.Text = "Agregar";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Image = global::juzgado.Properties.Resources.demandante;
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(205, 22);
+            this.toolStripMenuItem2.Text = "Camviar A Demandantes";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Image = global::juzgado.Properties.Resources.demandado;
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(205, 22);
+            this.toolStripMenuItem3.Text = "Camviar A Demandados";
             // 
             // panel1
             // 
@@ -407,6 +441,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.menuUsuarios.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvolucrados)).EndInit();
+            this.menuInvolucrados.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -450,5 +485,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewCheckBoxColumn seleccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.ContextMenuStrip menuInvolucrados;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
     }
 }
