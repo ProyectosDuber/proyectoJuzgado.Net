@@ -14,6 +14,8 @@ namespace juzgado.Vistas.Login
     public partial class frmProcesosJudiciales : Principal
     {
         public JuzgadoEntities db = new JuzgadoEntities();
+        int segundos=0;
+        mensaje objMensaje = new mensaje();
         public frmProcesosJudiciales()
         {
             InitializeComponent();
@@ -82,6 +84,7 @@ namespace juzgado.Vistas.Login
                 }
                 celdaCheck.Value = false;
             }
+           
          
         }
 
@@ -127,9 +130,27 @@ namespace juzgado.Vistas.Login
 
         private void dgvInvolucrados_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
+            
+            if (e.Button == MouseButtons.Left && e.Clicks ==2)
             {
-              
+                DataGridViewComboBoxCell celda = (DataGridViewComboBoxCell)dgvInvolucrados.Rows[e.RowIndex].Cells[4];
+                DataGridViewImageCell celdaImagen = (DataGridViewImageCell)dgvInvolucrados.Rows[e.RowIndex].Cells[5];
+                DataGridViewRow fila = dgvInvolucrados.Rows[e.RowIndex];
+                string dato = celda.Value.ToString();
+                if (dato.Equals("Demandante"))
+                {
+                    celda.Value = "Demandado";
+                    Image img = Image.FromFile(@"Iconos/demandado.png");
+                    celdaImagen.Value=img;
+                }
+                else
+                {
+                    celda.Value = "Demandante";
+                    Image img = Image.FromFile(@"Iconos/demandante.png");
+                    celdaImagen.Value = img;
+                }
+                validarEquilibrio();
+                dgvInvolucrados.CurrentRow.Selected = false;
             }
         }
 
@@ -137,7 +158,45 @@ namespace juzgado.Vistas.Login
         {
            
         }
+        private void validarEquilibrio()
+        {
+            
+            int demantantes = 0;
+            int demandados = 0;
+            foreach (DataGridViewRow fila in dgvInvolucrados.Rows)
+            {
+                DataGridViewComboBoxCell celCombo = (DataGridViewComboBoxCell)fila.Cells[4];
+                if (celCombo.Value.Equals("Demandante"))
+                {
+                    demantantes++;
+                }
+                else
+                {
+                    demandados++;
+                }
 
+
+            }
+
+            if (demandados <= 0 || demantantes <= 0)
+            {
+
+               
+                crear_proceso.Enabled = false;
+                objMensaje.Visible = false;
+                timer1.Stop();
+                segundos = 0;
+                objMensaje = new mensaje();
+                this.objMensaje.Visible = true;
+                timer1.Start();
+            }
+            else
+            {
+                crear_proceso.Enabled = true;
+            
+            }
+        }
+   
         private void dgvInvolucrados_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -145,12 +204,50 @@ namespace juzgado.Vistas.Login
                 if (dgvInvolucrados.Rows.Count > 0)
                 {
                     dgvInvolucrados.ContextMenuStrip = menuInvolucrados;
+                    validarEquilibrio();       
                 }
                 else
                 {
                     dgvInvolucrados.ContextMenuStrip = null;
                 }
             }
+        }
+
+        private void crear_proceso_Click(object sender, EventArgs e)
+        {
+
+            //if (equilibrado == false)
+            //{
+            //    segundos = 0;
+            //    this.objMensaje.Visible = true;
+            //    timer1.Start();
+            //}
+               
+              
+            
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (segundos > 1)
+            {
+                objMensaje.Visible = false;
+                timer1.Stop();
+                segundos = 0;
+            }
+            else
+            {
+                segundos++;
+            }
+        }
+
+        private void crear_proceso_MouseEnter(object sender, EventArgs e)
+        {
+        }
+
+        private void crear_proceso_MouseUp(object sender, MouseEventArgs e)
+        {
+            
         }
     }
 }

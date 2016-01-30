@@ -18,7 +18,7 @@ namespace juzgado
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmUsuarios());
+            Application.Run(new frmProcesosJudiciales());
         }
     }
 }

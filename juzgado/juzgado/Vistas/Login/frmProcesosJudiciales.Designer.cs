@@ -61,12 +61,14 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Papel = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.menuInvolucrados = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.crear_proceso = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txBusqueda = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProcesosJudiciales)).BeginInit();
@@ -320,7 +322,8 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn5,
-            this.Papel});
+            this.Papel,
+            this.Column1});
             this.dgvInvolucrados.ContextMenuStrip = this.menuInvolucrados;
             this.dgvInvolucrados.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvInvolucrados.Location = new System.Drawing.Point(0, 0);
@@ -367,23 +370,34 @@
             "Demandante",
             "Demandado"});
             this.Papel.Name = "Papel";
+            this.Papel.ReadOnly = true;
             this.Papel.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Icono";
+            this.Column1.Image = global::juzgado.Properties.Resources.demandante;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // menuInvolucrados
             // 
             this.menuInvolucrados.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
+            this.crear_proceso,
             this.toolStripMenuItem2,
             this.toolStripMenuItem3});
             this.menuInvolucrados.Name = "contextMenuStrip1";
             this.menuInvolucrados.Size = new System.Drawing.Size(206, 70);
             // 
-            // toolStripMenuItem1
+            // crear_proceso
             // 
-            this.toolStripMenuItem1.Image = global::juzgado.Properties.Resources._1452634100_file_add;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(205, 22);
-            this.toolStripMenuItem1.Text = "Agregar";
+            this.crear_proceso.Image = global::juzgado.Properties.Resources._1452634100_file_add;
+            this.crear_proceso.Name = "crear_proceso";
+            this.crear_proceso.Size = new System.Drawing.Size(205, 22);
+            this.crear_proceso.Text = "Crear Proceso Judicial";
+            this.crear_proceso.Click += new System.EventHandler(this.crear_proceso_Click);
+            this.crear_proceso.MouseEnter += new System.EventHandler(this.crear_proceso_MouseEnter);
+            this.crear_proceso.MouseUp += new System.Windows.Forms.MouseEventHandler(this.crear_proceso_MouseUp);
             // 
             // toolStripMenuItem2
             // 
@@ -418,6 +432,11 @@
             this.txBusqueda.Size = new System.Drawing.Size(171, 20);
             this.txBusqueda.TabIndex = 0;
             this.txBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frmProcesosJudiciales
             // 
@@ -474,11 +493,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsNuevo;
         private System.Windows.Forms.ToolStripMenuItem tsEditar;
         private System.Windows.Forms.ToolStripMenuItem tsEliminar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Papel;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
@@ -486,8 +500,15 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn seleccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.ContextMenuStrip menuInvolucrados;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem crear_proceso;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Papel;
+        private System.Windows.Forms.DataGridViewImageColumn Column1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
