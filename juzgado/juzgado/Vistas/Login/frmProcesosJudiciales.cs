@@ -19,7 +19,7 @@ namespace juzgado.Vistas.Login
         int segundos=0;
         mensaje objMensaje = new mensaje();
         mensajeLink objMensajeLink= new mensajeLink(new frmTiposDeProcesos());
-
+        
         public frmProcesosJudiciales()
         {
             InitializeComponent();
@@ -28,6 +28,9 @@ namespace juzgado.Vistas.Login
           
          
             dgvInvolucrados.ContextMenuStrip = null;
+           
+           
+
         }
 
         private void frmProcesosJudiciales_Load(object sender, EventArgs e)
@@ -105,10 +108,10 @@ namespace juzgado.Vistas.Login
         public void llenarTablaPorDocumento()
         {
             var listaUsuarios = Usuarios.buscarPorDocumento(db, txBusqueda.Text);
-
+            int numero = 0;
             foreach (var item in listaUsuarios)
             {
-
+                numero++;
                 int id = item.idUsuario;
                 var rows = dgvInvolucrados.Rows;
                 bool esInvolucrado = false;
@@ -130,8 +133,26 @@ namespace juzgado.Vistas.Login
                 }
 
             }
+            if (numero == 0)
+            {
+                objMensaje.Visible = false;
+                timer1.Stop();
+                segundos = 0;
+                objMensaje = new mensaje();
+                objMensaje.lbTexto.Text = "No hay datos\r\nque coincidan con su busqueda\r\nlo sentimos...";
+                this.objMensaje.Visible = true;
+                timer1.Start();
+            }
         }
-
+        private void mostrarMensaje(String mensaje,int segundos){
+            objMensaje.Visible = false;
+            timer1.Stop();
+            this.segundos = segundos;
+            objMensaje = new mensaje();
+            objMensaje.lbTexto.Text = mensaje;
+            this.objMensaje.Visible = true;
+            timer1.Start();
+        }
         private void dgvInvolucrados_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
         {
             
@@ -258,5 +279,153 @@ namespace juzgado.Vistas.Login
         {
             
         }
+
+        private void txBusqueda_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+       
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            panelBusqueda.Visible = false;
+        }
+
+        private void busquedaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panelBusqueda.Visible = true;
+        }
+
+        private void ckCodigo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckCodigo.Checked == true)
+            {
+                mostrarMensaje("Introduce el codigo\r\nde el proceso judicial\r\nen la caja numerica...",-2);
+                desavilitarDiferentesACodigo();
+                nbCodigo.Visible = true;
+            }
+            else
+            {
+                abilitarDiferentesACodigo();
+                nbCodigo.Visible = false;
+            }
+        }
+        private void desavilitarDiferentesACodigo()
+        {
+            ckFechaFinalizacion.Enabled = false;
+            ckFechaFinalizacion.Checked = false;
+
+            ckFechaInicio.Enabled = false;
+            ckFechaInicio.Checked = false;
+
+            ckInvolucrado.Enabled = false;
+            ckInvolucrado.Checked = false;
+
+            ckTipoProceso.Enabled = false;
+            ckTipoProceso.Checked = false;
+        }
+        private void abilitarDiferentesACodigo()
+        {
+            ckFechaFinalizacion.Enabled = true;
+            ckFechaInicio.Enabled = true;
+
+            ckInvolucrado.Enabled = true;
+            
+            
+                ckTipoProceso.Enabled = true;
+            
+            
+        }
+
+        private void ckFechaInicio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckFechaInicio.Checked == true)
+            {
+                mostrarMensaje("Introduce la fecha de inicio\r\nminima y maxima\r\nde el proceso judicial\r\nen los calendarios...", -2);
+                
+                dpFechaInicioMin.Visible = true;
+                dpFechaInicioMax.Visible = true;
+            }
+            else
+            {
+
+                dpFechaInicioMin.Visible = false;
+                dpFechaInicioMax.Visible = false;
+            }
+        }
+
+        private void ckFechaFinalizacion_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckFechaFinalizacion.Checked == true)
+            {
+                mostrarMensaje("Introduce la fecha de finalizacion\r\nminima y maxima\r\nde el proceso judicial\r\nen los calendarios...", -2);
+
+                dpFechaFinalizacionMin.Visible = true;
+                dpFechaFinalizacionMax.Visible = true;
+            }
+            else
+            {
+
+                dpFechaFinalizacionMin.Visible = false;
+                dpFechaFinalizacionMax.Visible = false;
+            }
+        }
+
+        private void ckInvolucrado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckInvolucrado.Checked == true)
+            {
+                mostrarMensaje("Introduce el documento\r\nde el involucrado\r\nen la caja numerica...", -2);
+
+                nbInvolucrado.Visible = true;
+              
+            }
+            else
+            {
+
+                nbInvolucrado.Visible = false;
+            }
+        }
+
+        private void ckTipoProceso_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckTipoProceso.Checked == true)
+            {
+                mostrarMensaje("Digita el tipo de proceso\r\ndel cual quieres filtrar\r\nen la caja de texto...", -2);
+
+                txTipoProceso.Visible = true;
+
+            }
+            else
+            {
+
+                txTipoProceso.Visible = false;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (ckCodigo.Checked == true)
+            {
+
+            }
+        }
+        private void llenarTablaProcesosJudiciales(IQueryable<procesosJudiciales> listaProcesos)
+        {
+            foreach (procesosJudiciales prosesoJ in listaProcesos)
+            {
+                if(prosesoJ.estado=="finalizado"){
+                    dgvProcesosJudiciales.Rows.Add(prosesoJ, prosesoJ.idProcesosJudiciales, prosesoJ.tipoProceso1.tipoProceso1, String.Format("{0:dd-MM-yyyy}", prosesoJ.fechaInicio), String.Format("{0:dd-MM-yyyy}", prosesoJ.fechaFinal),prosesoJ.Involucrados.Count,prosesoJ.Seguimientos.Count);
+            
+                }else{
+                    dgvProcesosJudiciales.Rows.Add(prosesoJ, prosesoJ.idProcesosJudiciales, prosesoJ.tipoProceso1.tipoProceso1, String.Format("{0:dd-MM-yyyy}", prosesoJ.fechaInicio), "Sin Finalizar", prosesoJ.Involucrados.Count, prosesoJ.Seguimientos.Count);
+            
+                }
+            
+            }
+        }
+
+        
     }
 }
