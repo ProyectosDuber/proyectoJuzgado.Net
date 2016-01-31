@@ -62,6 +62,7 @@
             this.dgvTipoProcesos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTipoProcesos.Size = new System.Drawing.Size(593, 562);
             this.dgvTipoProcesos.TabIndex = 4;
+            this.dgvTipoProcesos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTipoProcesos_CellContentClick);
             this.dgvTipoProcesos.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvTipoProcesos_CellMouseDown);
             // 
             // objeto
@@ -143,6 +144,7 @@
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "frmTiposDeProcesos";
             this.Text = "frmTiposDeProcesos";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmTiposDeProcesos_FormClosed);
             this.Load += new System.EventHandler(this.frmTiposDeProcesos_Load);
             this.Controls.SetChildIndex(this.dgvTipoProcesos, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipoProcesos)).EndInit();

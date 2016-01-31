@@ -1,4 +1,6 @@
 ﻿using juzgado.Modelos;
+using juzgado.Vistas.Mensajes;
+using juzgado.Vistas.Procesos_crud;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +18,7 @@ namespace juzgado.Vistas.Login
         public JuzgadoEntities db = new JuzgadoEntities();
         int segundos=0;
         mensaje objMensaje = new mensaje();
+        mensajeLink objMensajeLink= new mensajeLink(new frmTiposDeProcesos());
         public frmProcesosJudiciales()
         {
             InitializeComponent();
@@ -216,14 +219,18 @@ namespace juzgado.Vistas.Login
         private void crear_proceso_Click(object sender, EventArgs e)
         {
 
-            //if (equilibrado == false)
-            //{
-            //    segundos = 0;
-            //    this.objMensaje.Visible = true;
-            //    timer1.Start();
-            //}
-               
-              
+            if (tipoProceso.verificarActivos(db) == true)
+            {
+                frmNuevoProceso objnuevo = new frmNuevoProceso();
+                
+                this.Enabled = false;
+                objnuevo.Visible = true;
+            }
+            else
+            {
+                objMensajeLink.Visible = true;
+                objMensajeLink.Focus();
+            }
             
         }
 

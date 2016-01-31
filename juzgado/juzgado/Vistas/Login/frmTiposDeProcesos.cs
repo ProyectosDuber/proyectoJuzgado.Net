@@ -16,6 +16,7 @@ namespace juzgado.Vistas.Login
         public JuzgadoEntities db = new JuzgadoEntities();
         String modo = "crud";
         private DataGridViewRow filaSeleccionada = null;
+        public bool salir = true;
         public frmTiposDeProcesos()
         {
             InitializeComponent();
@@ -26,7 +27,7 @@ namespace juzgado.Vistas.Login
 
         private void frmTiposDeProcesos_Load(object sender, EventArgs e)
         {
-
+            
         }
         //para el constructor
         private void llenarTabla()
@@ -101,6 +102,10 @@ namespace juzgado.Vistas.Login
 
         private void tsNuevo_Click(object sender, EventArgs e)
         {//btn agregar
+            mtdAgregar();
+        }
+        public void mtdAgregar()
+        {
             changeModeToAgregar();
             dgvTipoProcesos.Rows.Add("", "");
             dgvTipoProcesos.Rows[dgvTipoProcesos.Rows.Count - 1].ReadOnly = false;
@@ -108,8 +113,8 @@ namespace juzgado.Vistas.Login
             celda.Style.BackColor = Color.CadetBlue;
             dgvTipoProcesos.CurrentCell = celda;
             dgvTipoProcesos.BeginEdit(true);
-        }
 
+        }
         private void tsEditar_Click(object sender, EventArgs e)
         {
             //btn edicion
@@ -270,6 +275,24 @@ namespace juzgado.Vistas.Login
 
                 }
             }
+        }
+
+        private void frmTiposDeProcesos_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+            if (salir == true)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                this.Visible = false;
+            }
+        }
+
+        private void dgvTipoProcesos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
         
     }
