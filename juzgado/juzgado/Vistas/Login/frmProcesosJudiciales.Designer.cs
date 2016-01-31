@@ -175,6 +175,7 @@
             this.dgvProcesosJudiciales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProcesosJudiciales.Size = new System.Drawing.Size(623, 352);
             this.dgvProcesosJudiciales.TabIndex = 6;
+            this.dgvProcesosJudiciales.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvProcesosJudiciales_CellMouseDown);
             // 
             // objeto
             // 

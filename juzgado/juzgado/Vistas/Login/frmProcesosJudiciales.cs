@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,7 +29,10 @@ namespace juzgado.Vistas.Login
             llenarTablaProcesosJudiciales(procesosJudiciales.selectAll(db));
          
             dgvInvolucrados.ContextMenuStrip = null;
-           
+            dpFechaInicioMin.Value = DateTime.Now.Date;
+            dpFechaInicioMax.Value = DateTime.Now.Date.AddHours(23).AddMinutes(59);
+            dpFechaFinalizacionMin.Value = DateTime.Now.Date;
+            dpFechaFinalizacionMax.Value = DateTime.Now.Date.AddHours(23).AddMinutes(59);
            
 
         }
@@ -409,15 +413,9 @@ namespace juzgado.Vistas.Login
             if (ckCodigo.Checked == true)
             {
                 var lista = procesosJudiciales.buscarPorCodigo(db,(int) nbCodigo.Value);
-               
-                if (lista.Count() !=0 )
-                {
-                    llenarTablaProcesosJudiciales(lista);
-                }
-                else
-                {
-                    mostrarMensaje("Lo sentimos\r\nno hay datos que\r\ncoincidan con tu busqueda...",-2);
-                }
+                llenarTablaProcesosJudiciales(lista);
+                mostrarMensaje(lista.Count() + " resultados encontrados", -2);
+                
             }
             else
             {
@@ -573,6 +571,27 @@ namespace juzgado.Vistas.Login
 
                 }
 
+            }
+        }
+
+        private void dgvProcesosJudiciales_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dgvProcesosJudiciales.ContextMenuStrip = menuProcesos;
+            try
+            {
+                if (e.Button == MouseButtons.Right)
+                {
+                    // Add this
+                    dgvProcesosJudiciales.CurrentCell = dgvProcesosJudiciales.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                    // Can leave these here - doesn't hurt
+                    dgvProcesosJudiciales.Rows[e.RowIndex].Selected = true;
+                    dgvProcesosJudiciales.Focus();
+                }
+            }
+            catch (Exception Ex)
+            {
+
+                dgvProcesosJudiciales.ContextMenuStrip = null;
             }
         }
         

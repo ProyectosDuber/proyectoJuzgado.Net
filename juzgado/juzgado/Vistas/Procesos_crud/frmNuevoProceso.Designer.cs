@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txObservaciones = new System.Windows.Forms.RichTextBox();
+            this.txCodigo = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.txEstado = new System.Windows.Forms.ToolStripStatusLabel();
@@ -40,9 +43,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txAsunto = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txCodigo = new System.Windows.Forms.Label();
-            this.txObservaciones = new System.Windows.Forms.RichTextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -69,6 +69,37 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(784, 562);
             this.panel1.TabIndex = 1;
+            // 
+            // txObservaciones
+            // 
+            this.txObservaciones.Location = new System.Drawing.Point(147, 297);
+            this.txObservaciones.MaxLength = 200;
+            this.txObservaciones.Name = "txObservaciones";
+            this.txObservaciones.Size = new System.Drawing.Size(461, 127);
+            this.txObservaciones.TabIndex = 24;
+            this.txObservaciones.Text = "";
+            // 
+            // txCodigo
+            // 
+            this.txCodigo.AutoSize = true;
+            this.txCodigo.BackColor = System.Drawing.Color.Transparent;
+            this.txCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txCodigo.Location = new System.Drawing.Point(149, 60);
+            this.txCodigo.Name = "txCodigo";
+            this.txCodigo.Size = new System.Drawing.Size(79, 31);
+            this.txCodigo.TabIndex = 23;
+            this.txCodigo.Text = "None";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(97, 60);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 15);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Codigo";
             // 
             // label2
             // 
@@ -99,12 +130,13 @@
             // 
             // dpFechaInicio
             // 
-            this.dpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dpFechaInicio.CustomFormat = "dd/MM/yyyy HH:mm";
+            this.dpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dpFechaInicio.Location = new System.Drawing.Point(147, 216);
             this.dpFechaInicio.Name = "dpFechaInicio";
             this.dpFechaInicio.Size = new System.Drawing.Size(184, 20);
             this.dpFechaInicio.TabIndex = 16;
-            this.dpFechaInicio.Value = new System.DateTime(2016, 1, 25, 19, 11, 32, 0);
+            this.dpFechaInicio.Value = new System.DateTime(2016, 1, 25, 0, 0, 0, 0);
             // 
             // label7
             // 
@@ -164,37 +196,6 @@
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(97, 60);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 15);
-            this.label4.TabIndex = 22;
-            this.label4.Text = "Codigo";
-            // 
-            // txCodigo
-            // 
-            this.txCodigo.AutoSize = true;
-            this.txCodigo.BackColor = System.Drawing.Color.Transparent;
-            this.txCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txCodigo.Location = new System.Drawing.Point(149, 60);
-            this.txCodigo.Name = "txCodigo";
-            this.txCodigo.Size = new System.Drawing.Size(79, 31);
-            this.txCodigo.TabIndex = 23;
-            this.txCodigo.Text = "None";
-            // 
-            // txObservaciones
-            // 
-            this.txObservaciones.Location = new System.Drawing.Point(147, 297);
-            this.txObservaciones.MaxLength = 200;
-            this.txObservaciones.Name = "txObservaciones";
-            this.txObservaciones.Size = new System.Drawing.Size(461, 127);
-            this.txObservaciones.TabIndex = 24;
-            this.txObservaciones.Text = "";
             // 
             // timer1
             // 

@@ -36,6 +36,7 @@ namespace juzgado.Vistas.Procesos_crud
             cbTipoProceso.SelectedIndex = 0;
             crearProcesoVacio();
             txCodigo.Text = "" + proceso.idProcesosJudiciales;
+            dpFechaInicio.Value = DateTime.Now.Date;
         }
 
        
@@ -85,12 +86,13 @@ namespace juzgado.Vistas.Procesos_crud
                 objMensaje.Focus();
                 segundos = 0;
                 timer1.Start();
-                crearProcesoVacio();
-                txCodigo.Text = ""+proceso.idProcesosJudiciales;
                 txObservaciones.Text = "";
                 cbTipoProceso.SelectedIndex = 0;
                 txAsunto.Text = "";
                 dpFechaInicio.Value = DateTime.Now.Date;
+                crearProcesoVacio();
+                txCodigo.Text = ""+proceso.idProcesosJudiciales;
+                
 
             }
         }

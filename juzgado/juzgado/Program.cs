@@ -19,7 +19,7 @@ namespace juzgado
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmProcesosJudiciales());
+            Application.Run(new verProcesoJudicial());
         }
     }
 }

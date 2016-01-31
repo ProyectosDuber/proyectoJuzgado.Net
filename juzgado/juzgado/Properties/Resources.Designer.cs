@@ -273,6 +273,26 @@ namespace juzgado.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap involucrados {
+            get {
+                object obj = ResourceManager.GetObject("involucrados", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap martillos {
+            get {
+                object obj = ResourceManager.GetObject("martillos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap misc {
             get {
                 object obj = ResourceManager.GetObject("misc", resourceCulture);
@@ -316,6 +336,16 @@ namespace juzgado.Properties {
         internal static System.Drawing.Bitmap red {
             get {
                 object obj = ResourceManager.GetObject("red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap seguimiento {
+            get {
+                object obj = ResourceManager.GetObject("seguimiento", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

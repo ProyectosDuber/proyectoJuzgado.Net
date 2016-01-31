@@ -150,6 +150,12 @@
     <Compile Include="Vistas\Procesos_crud\frmNuevoProceso.Designer.cs">
       <DependentUpon>frmNuevoProceso.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Procesos_crud\verProcesoJudicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Procesos_crud\verProcesoJudicial.Designer.cs">
+      <DependentUpon>verProcesoJudicial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Usuarios_crud\frmEditarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Procesos_crud\frmNuevoProceso.resx">
       <DependentUpon>frmNuevoProceso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Procesos_crud\verProcesoJudicial.resx">
+      <DependentUpon>verProcesoJudicial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Usuarios_crud\frmEditarUsuario.resx">
       <DependentUpon>frmEditarUsuario.cs</DependentUpon>
@@ -347,6 +356,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\Iconos\buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iconos\involucrados.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iconos\seguimiento.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iconos\martillos.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
