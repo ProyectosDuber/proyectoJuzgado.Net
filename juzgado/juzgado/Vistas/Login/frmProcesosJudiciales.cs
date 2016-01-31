@@ -221,9 +221,9 @@ namespace juzgado.Vistas.Login
 
             if (tipoProceso.verificarActivos(db) == true)
             {
-                frmNuevoProceso objnuevo = new frmNuevoProceso();
+                frmNuevoProceso objnuevo = new frmNuevoProceso(this,db);
                 
-                this.Enabled = false;
+                
                 objnuevo.Visible = true;
             }
             else

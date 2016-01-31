@@ -11,7 +11,7 @@ namespace juzgado.Modelos
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
     public partial class procesosJudiciales
     {
         public procesosJudiciales()
@@ -31,5 +31,26 @@ namespace juzgado.Modelos
         public virtual ICollection<Involucrados> Involucrados { get; set; }
         public virtual tipoProceso tipoProceso1 { get; set; }
         public virtual ICollection<Seguimientos> Seguimientos { get; set; }
+        public static int mtdNumeroDeProcesos(JuzgadoEntities db)
+        {
+
+
+            
+
+            try
+            {
+                int numero = db.procesosJudiciales.Max(p => p.idProcesosJudiciales);
+                return numero;
+
+
+
+            }
+            catch (Exception e)
+            {
+                return -1;
+
+            }
+        }
+       
     }
 }

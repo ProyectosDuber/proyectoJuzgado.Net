@@ -72,5 +72,9 @@ namespace juzgado.Modelos
 
             }
         }
+        public override string ToString()
+        {
+            return tipoProceso1;
+        }
     }
 }
