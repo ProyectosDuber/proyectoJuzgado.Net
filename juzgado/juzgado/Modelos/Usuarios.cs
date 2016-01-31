@@ -37,7 +37,7 @@ namespace juzgado.Modelos
 
 
             var query = from lo in db.Usuarios where lo.estado.Equals("activo") select lo;
-
+            
             try
             {
 

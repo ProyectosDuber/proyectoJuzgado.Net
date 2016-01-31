@@ -298,6 +298,7 @@
             this.txTipoProceso.Name = "txTipoProceso";
             this.txTipoProceso.Size = new System.Drawing.Size(113, 20);
             this.txTipoProceso.TabIndex = 22;
+            this.txTipoProceso.Visible = false;
             // 
             // nbInvolucrado
             // 
@@ -408,7 +409,6 @@
             this.ckTipoProceso.TabIndex = 2;
             this.ckTipoProceso.Text = "Tipo de proceso";
             this.ckTipoProceso.UseVisualStyleBackColor = true;
-            this.ckTipoProceso.Visible = false;
             this.ckTipoProceso.CheckedChanged += new System.EventHandler(this.ckTipoProceso_CheckedChanged);
             // 
             // ckFechaInicio

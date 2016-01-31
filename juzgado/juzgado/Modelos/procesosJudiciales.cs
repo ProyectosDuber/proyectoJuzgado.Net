@@ -71,6 +71,26 @@ namespace juzgado.Modelos
 
             }
         }
+        public static IQueryable<procesosJudiciales> buscarPorCodigo(JuzgadoEntities db,int codigo)
+        {
+
+
+            var query = from lo in db.procesosJudiciales where (lo.idProcesosJudiciales==codigo) &&  (lo.estado.Equals("activo") || lo.estado.Equals("finalizado")) select lo;
+
+            try
+            {
+
+
+                return query;
+
+
+            }
+            catch (Exception e)
+            {
+                return null;
+
+            }
+        }
        
     }
 }
