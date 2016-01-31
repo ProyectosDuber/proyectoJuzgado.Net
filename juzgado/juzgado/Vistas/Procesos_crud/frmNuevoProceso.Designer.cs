@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.txEstado = new System.Windows.Forms.ToolStripStatusLabel();
             this.dpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
@@ -40,6 +38,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txNombres = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -63,25 +63,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(784, 562);
             this.panel1.TabIndex = 1;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(154, 261);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(461, 119);
-            this.textBox1.TabIndex = 21;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(151, 228);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 15);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Observaciones";
             // 
             // statusStrip1
             // 
@@ -166,6 +147,25 @@
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(151, 228);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 15);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Observaciones";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(154, 261);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(461, 119);
+            this.textBox1.TabIndex = 21;
+            // 
             // frmNuevoProceso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,7 +173,6 @@
             this.ClientSize = new System.Drawing.Size(784, 562);
             this.Controls.Add(this.panel1);
             this.Name = "frmNuevoProceso";
-            this.Opacity = 0.9D;
             this.Text = "frmNuevoProceso";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

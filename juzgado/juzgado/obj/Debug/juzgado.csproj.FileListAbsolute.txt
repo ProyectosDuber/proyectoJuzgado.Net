@@ -38,3 +38,5 @@ C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgad
 C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgado\juzgado\obj\Debug\juzgado.Vistas.Usuarios_crud.frmNuevoUsuario.resources
 C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgado\juzgado\obj\Debug\juzgado.Vistas.Usuarios_crud.frmEditarUsuario.resources
 C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgado\juzgado\obj\Debug\juzgado.Vistas.Login.mensaje.resources
+C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgado\juzgado\obj\Debug\juzgado.Vistas.Procesos_crud.frmNuevoProceso.resources
+C:\Users\Duber\Documents\Proyectos De Repocitorio Git\proyectoJuzgado.Net\juzgado\juzgado\obj\Debug\juzgado.Vistas.Mensajes.mensajeLink.resources

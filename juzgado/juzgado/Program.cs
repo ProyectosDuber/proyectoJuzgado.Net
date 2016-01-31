@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using juzgado.Vistas.Procesos_crud;
+using juzgado.Vistas.Mensajes;
 namespace juzgado
 {
     static class Program

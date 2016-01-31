@@ -15,6 +15,7 @@ namespace juzgado.Vistas.Login
         public JuzgadoEntities db = new JuzgadoEntities();
         String modo = "crud";
         private DataGridViewRow filaSeleccionada = null;
+        public bool salir = true;
         public frmTipoArreglo()
         {
             InitializeComponent();
@@ -31,7 +32,15 @@ namespace juzgado.Vistas.Login
 
         private void frmTipoArreglo_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            if (salir == true)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                this.Visible = false;
+               
+            }
         }
 
         private void llenarTabla()
@@ -84,15 +93,19 @@ namespace juzgado.Vistas.Login
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {//btn agregar
 
-
+            mtdAgregar();
+           
+            
+        }
+        public void mtdAgregar()
+        {
             changeModeToAgregar();
-            dgvTipoArreglos.Rows.Add("","");
-            dgvTipoArreglos.Rows[dgvTipoArreglos.Rows.Count-1].ReadOnly = false;
+            dgvTipoArreglos.Rows.Add("", "");
+            dgvTipoArreglos.Rows[dgvTipoArreglos.Rows.Count - 1].ReadOnly = false;
             DataGridViewCell celda = dgvTipoArreglos.Rows[dgvTipoArreglos.Rows.Count - 1].Cells[1];
             celda.Style.BackColor = Color.CadetBlue;
             dgvTipoArreglos.CurrentCell = celda;
             dgvTipoArreglos.BeginEdit(true);
-            
         }
         private void desavilitarFilas()
         {
