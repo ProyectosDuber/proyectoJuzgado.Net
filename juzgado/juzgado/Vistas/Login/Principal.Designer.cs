@@ -142,7 +142,6 @@
             this.Text = "Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Principal_FormClosed);
-            this.Load += new System.EventHandler(this.Principal_Load);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.ResumeLayout(false);
@@ -161,7 +160,7 @@
         private System.Windows.Forms.ToolStripMenuItem mTiposProceso;
         private System.Windows.Forms.ToolStripMenuItem mUsuarios;
         private System.Windows.Forms.ToolStripMenuItem mProcesosJudiciales;
-        public System.Windows.Forms.MenuStrip menu;
+        private System.Windows.Forms.MenuStrip menu;
 
 
 

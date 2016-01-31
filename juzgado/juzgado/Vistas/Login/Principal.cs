@@ -16,7 +16,6 @@ namespace juzgado.Vistas.Login
         {
             InitializeComponent();
         }
-       
 
         private void asdToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -105,12 +104,7 @@ namespace juzgado.Vistas.Login
 
         private void Principal_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
-        }
-
-        private void Principal_Load(object sender, EventArgs e)
-        {
-
+            Application.Exit();
         }
 
     }

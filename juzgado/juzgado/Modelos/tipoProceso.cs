@@ -45,32 +45,5 @@ namespace juzgado.Modelos
 
             }
         }
-        public static bool verificarActivos(JuzgadoEntities db)
-        {
-
-
-            int numero = (from lo in db.tipoProceso where lo.estado == "activo" select lo).Count();
-
-            try
-            {
-
-                if (numero > 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-
-
-
-            }
-            catch (Exception e)
-            {
-                return false;
-
-            }
-        }
     }
 }
