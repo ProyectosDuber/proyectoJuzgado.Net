@@ -47,7 +47,7 @@ namespace juzgado.Modelos
             }
             catch (Exception e)
             {
-                return -1;
+                return 0;
 
             }
         }

@@ -28,20 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.txEstado = new System.Windows.Forms.ToolStripStatusLabel();
-            this.dpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.dpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.cbTipoProceso = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txNombres = new System.Windows.Forms.TextBox();
+            this.txAsunto = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txCodigo = new System.Windows.Forms.Label();
+            this.txObservaciones = new System.Windows.Forms.RichTextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -50,31 +52,23 @@
             // 
             this.panel1.BackgroundImage = global::juzgado.Properties.Resources.Fondos_Wallpaper_Gratis_Abstractos__224_;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.txObservaciones);
             this.panel1.Controls.Add(this.txCodigo);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.statusStrip1);
-            this.panel1.Controls.Add(this.dpFechaNacimiento);
+            this.panel1.Controls.Add(this.dpFechaInicio);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.cbTipoProceso);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txNombres);
+            this.panel1.Controls.Add(this.txAsunto);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(784, 562);
             this.panel1.TabIndex = 1;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(147, 296);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(461, 119);
-            this.textBox1.TabIndex = 21;
             // 
             // label2
             // 
@@ -103,14 +97,14 @@
             this.txEstado.Size = new System.Drawing.Size(42, 17);
             this.txEstado.Text = "Estado";
             // 
-            // dpFechaNacimiento
+            // dpFechaInicio
             // 
-            this.dpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dpFechaNacimiento.Location = new System.Drawing.Point(147, 216);
-            this.dpFechaNacimiento.Name = "dpFechaNacimiento";
-            this.dpFechaNacimiento.Size = new System.Drawing.Size(184, 20);
-            this.dpFechaNacimiento.TabIndex = 16;
-            this.dpFechaNacimiento.Value = new System.DateTime(2016, 1, 25, 19, 11, 32, 0);
+            this.dpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dpFechaInicio.Location = new System.Drawing.Point(147, 216);
+            this.dpFechaInicio.Name = "dpFechaInicio";
+            this.dpFechaInicio.Size = new System.Drawing.Size(184, 20);
+            this.dpFechaInicio.TabIndex = 16;
+            this.dpFechaInicio.Value = new System.DateTime(2016, 1, 25, 19, 11, 32, 0);
             // 
             // label7
             // 
@@ -154,12 +148,12 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Asunto";
             // 
-            // txNombres
+            // txAsunto
             // 
-            this.txNombres.Location = new System.Drawing.Point(147, 112);
-            this.txNombres.Name = "txNombres";
-            this.txNombres.Size = new System.Drawing.Size(461, 20);
-            this.txNombres.TabIndex = 1;
+            this.txAsunto.Location = new System.Drawing.Point(147, 112);
+            this.txAsunto.Name = "txAsunto";
+            this.txAsunto.Size = new System.Drawing.Size(461, 20);
+            this.txAsunto.TabIndex = 1;
             // 
             // button1
             // 
@@ -193,6 +187,20 @@
             this.txCodigo.TabIndex = 23;
             this.txCodigo.Text = "None";
             // 
+            // txObservaciones
+            // 
+            this.txObservaciones.Location = new System.Drawing.Point(147, 297);
+            this.txObservaciones.MaxLength = 200;
+            this.txObservaciones.Name = "txObservaciones";
+            this.txObservaciones.Size = new System.Drawing.Size(461, 127);
+            this.txObservaciones.TabIndex = 24;
+            this.txObservaciones.Text = "";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // frmNuevoProceso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,19 +223,20 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel txEstado;
-        private System.Windows.Forms.DateTimePicker dpFechaNacimiento;
+        private System.Windows.Forms.DateTimePicker dpFechaInicio;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbTipoProceso;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txNombres;
+        private System.Windows.Forms.TextBox txAsunto;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label txCodigo;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.RichTextBox txObservaciones;
+        private System.Windows.Forms.Timer timer1;
 
     }
 }

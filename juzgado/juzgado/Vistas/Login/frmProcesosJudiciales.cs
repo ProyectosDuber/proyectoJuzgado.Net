@@ -19,6 +19,7 @@ namespace juzgado.Vistas.Login
         int segundos=0;
         mensaje objMensaje = new mensaje();
         mensajeLink objMensajeLink= new mensajeLink(new frmTiposDeProcesos());
+
         public frmProcesosJudiciales()
         {
             InitializeComponent();
@@ -221,7 +222,8 @@ namespace juzgado.Vistas.Login
 
             if (tipoProceso.verificarActivos(db) == true)
             {
-                frmNuevoProceso objnuevo = new frmNuevoProceso(this,db);
+                
+                frmNuevoProceso objnuevo = new frmNuevoProceso(this,db,dgvInvolucrados.Rows);
                 
                 
                 objnuevo.Visible = true;
