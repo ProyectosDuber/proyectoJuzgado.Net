@@ -24,7 +24,7 @@ namespace juzgado.Vistas.Login
             InitializeComponent();
             selectMenu(4);
             llenarTabla();
-          
+            
          
             dgvInvolucrados.ContextMenuStrip = null;
         }
