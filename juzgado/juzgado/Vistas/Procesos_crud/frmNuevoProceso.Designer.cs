@@ -67,7 +67,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(784, 562);
+            this.panel1.Size = new System.Drawing.Size(468, 562);
             this.panel1.TabIndex = 1;
             // 
             // txObservaciones
@@ -75,7 +75,7 @@
             this.txObservaciones.Location = new System.Drawing.Point(147, 297);
             this.txObservaciones.MaxLength = 200;
             this.txObservaciones.Name = "txObservaciones";
-            this.txObservaciones.Size = new System.Drawing.Size(461, 127);
+            this.txObservaciones.Size = new System.Drawing.Size(197, 127);
             this.txObservaciones.TabIndex = 24;
             this.txObservaciones.Text = "";
             // 
@@ -118,7 +118,7 @@
             this.txEstado});
             this.statusStrip1.Location = new System.Drawing.Point(0, 540);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(784, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(468, 22);
             this.statusStrip1.TabIndex = 19;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -134,7 +134,7 @@
             this.dpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dpFechaInicio.Location = new System.Drawing.Point(147, 216);
             this.dpFechaInicio.Name = "dpFechaInicio";
-            this.dpFechaInicio.Size = new System.Drawing.Size(184, 20);
+            this.dpFechaInicio.Size = new System.Drawing.Size(197, 20);
             this.dpFechaInicio.TabIndex = 16;
             this.dpFechaInicio.Value = new System.DateTime(2016, 1, 25, 0, 0, 0, 0);
             // 
@@ -155,7 +155,7 @@
             this.cbTipoProceso.FormattingEnabled = true;
             this.cbTipoProceso.Location = new System.Drawing.Point(147, 165);
             this.cbTipoProceso.Name = "cbTipoProceso";
-            this.cbTipoProceso.Size = new System.Drawing.Size(184, 21);
+            this.cbTipoProceso.Size = new System.Drawing.Size(197, 21);
             this.cbTipoProceso.TabIndex = 7;
             // 
             // label3
@@ -184,7 +184,7 @@
             // 
             this.txAsunto.Location = new System.Drawing.Point(147, 112);
             this.txAsunto.Name = "txAsunto";
-            this.txAsunto.Size = new System.Drawing.Size(461, 20);
+            this.txAsunto.Size = new System.Drawing.Size(197, 20);
             this.txAsunto.TabIndex = 1;
             // 
             // button1
@@ -206,7 +206,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 562);
+            this.ClientSize = new System.Drawing.Size(468, 562);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmNuevoProceso";

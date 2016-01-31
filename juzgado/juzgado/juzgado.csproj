@@ -150,6 +150,12 @@
     <Compile Include="Vistas\Procesos_crud\frmNuevoProceso.Designer.cs">
       <DependentUpon>frmNuevoProceso.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Procesos_crud\verInvolucrados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Procesos_crud\verInvolucrados.Designer.cs">
+      <DependentUpon>verInvolucrados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Procesos_crud\verProcesoJudicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Procesos_crud\frmNuevoProceso.resx">
       <DependentUpon>frmNuevoProceso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Procesos_crud\verInvolucrados.resx">
+      <DependentUpon>verInvolucrados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Procesos_crud\verProcesoJudicial.resx">
       <DependentUpon>verProcesoJudicial.cs</DependentUpon>
