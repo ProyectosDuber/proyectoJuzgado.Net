@@ -127,7 +127,7 @@
             this.tabControl1.Location = new System.Drawing.Point(191, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(593, 562);
+            this.tabControl1.Size = new System.Drawing.Size(637, 562);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -137,7 +137,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(585, 536);
+            this.tabPage1.Size = new System.Drawing.Size(629, 536);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Lista";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -148,7 +148,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 181);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(579, 352);
+            this.panel3.Size = new System.Drawing.Size(623, 352);
             this.panel3.TabIndex = 8;
             // 
             // dgvProcesosJudiciales
@@ -173,7 +173,7 @@
             this.dgvProcesosJudiciales.MultiSelect = false;
             this.dgvProcesosJudiciales.Name = "dgvProcesosJudiciales";
             this.dgvProcesosJudiciales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProcesosJudiciales.Size = new System.Drawing.Size(579, 352);
+            this.dgvProcesosJudiciales.Size = new System.Drawing.Size(623, 352);
             this.dgvProcesosJudiciales.TabIndex = 6;
             // 
             // objeto
@@ -264,7 +264,7 @@
             this.panelBusqueda.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBusqueda.Location = new System.Drawing.Point(3, 3);
             this.panelBusqueda.Name = "panelBusqueda";
-            this.panelBusqueda.Size = new System.Drawing.Size(579, 178);
+            this.panelBusqueda.Size = new System.Drawing.Size(623, 178);
             this.panelBusqueda.TabIndex = 7;
             // 
             // panel5
@@ -274,7 +274,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(156, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(389, 178);
+            this.panel5.Size = new System.Drawing.Size(433, 178);
             this.panel5.TabIndex = 5;
             // 
             // panel7
@@ -289,14 +289,14 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(130, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(259, 178);
+            this.panel7.Size = new System.Drawing.Size(303, 178);
             this.panel7.TabIndex = 7;
             // 
             // txTipoProceso
             // 
             this.txTipoProceso.Location = new System.Drawing.Point(6, 152);
             this.txTipoProceso.Name = "txTipoProceso";
-            this.txTipoProceso.Size = new System.Drawing.Size(113, 20);
+            this.txTipoProceso.Size = new System.Drawing.Size(126, 20);
             this.txTipoProceso.TabIndex = 22;
             this.txTipoProceso.Visible = false;
             // 
@@ -304,8 +304,8 @@
             // 
             this.nbInvolucrado.Location = new System.Drawing.Point(6, 121);
             this.nbInvolucrado.Maximum = new decimal(new int[] {
-            10000,
-            0,
+            276447232,
+            23283,
             0,
             0});
             this.nbInvolucrado.Minimum = new decimal(new int[] {
@@ -314,7 +314,7 @@
             0,
             0});
             this.nbInvolucrado.Name = "nbInvolucrado";
-            this.nbInvolucrado.Size = new System.Drawing.Size(113, 20);
+            this.nbInvolucrado.Size = new System.Drawing.Size(126, 20);
             this.nbInvolucrado.TabIndex = 21;
             this.nbInvolucrado.Value = new decimal(new int[] {
             1,
@@ -325,42 +325,46 @@
             // 
             // dpFechaFinalizacionMax
             // 
-            this.dpFechaFinalizacionMax.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dpFechaFinalizacionMax.Location = new System.Drawing.Point(140, 90);
+            this.dpFechaFinalizacionMax.CustomFormat = "dd/MM/yyyy HH:mm";
+            this.dpFechaFinalizacionMax.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dpFechaFinalizacionMax.Location = new System.Drawing.Point(152, 90);
             this.dpFechaFinalizacionMax.Name = "dpFechaFinalizacionMax";
-            this.dpFechaFinalizacionMax.Size = new System.Drawing.Size(113, 20);
+            this.dpFechaFinalizacionMax.Size = new System.Drawing.Size(128, 20);
             this.dpFechaFinalizacionMax.TabIndex = 20;
-            this.dpFechaFinalizacionMax.Value = new System.DateTime(2016, 1, 25, 19, 11, 32, 0);
+            this.dpFechaFinalizacionMax.Value = new System.DateTime(2016, 1, 25, 23, 59, 0, 0);
             this.dpFechaFinalizacionMax.Visible = false;
             // 
             // dpFechaFinalizacionMin
             // 
-            this.dpFechaFinalizacionMin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dpFechaFinalizacionMin.CustomFormat = "dd/MM/yyyy HH:mm";
+            this.dpFechaFinalizacionMin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dpFechaFinalizacionMin.Location = new System.Drawing.Point(6, 90);
             this.dpFechaFinalizacionMin.Name = "dpFechaFinalizacionMin";
-            this.dpFechaFinalizacionMin.Size = new System.Drawing.Size(113, 20);
+            this.dpFechaFinalizacionMin.Size = new System.Drawing.Size(126, 20);
             this.dpFechaFinalizacionMin.TabIndex = 19;
-            this.dpFechaFinalizacionMin.Value = new System.DateTime(2016, 1, 25, 19, 11, 32, 0);
+            this.dpFechaFinalizacionMin.Value = new System.DateTime(2016, 1, 25, 0, 0, 0, 0);
             this.dpFechaFinalizacionMin.Visible = false;
             // 
             // dpFechaInicioMax
             // 
-            this.dpFechaInicioMax.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dpFechaInicioMax.Location = new System.Drawing.Point(140, 57);
+            this.dpFechaInicioMax.CustomFormat = "dd/MM/yyyy HH:mm";
+            this.dpFechaInicioMax.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dpFechaInicioMax.Location = new System.Drawing.Point(152, 57);
             this.dpFechaInicioMax.Name = "dpFechaInicioMax";
-            this.dpFechaInicioMax.Size = new System.Drawing.Size(113, 20);
+            this.dpFechaInicioMax.Size = new System.Drawing.Size(128, 20);
             this.dpFechaInicioMax.TabIndex = 18;
-            this.dpFechaInicioMax.Value = new System.DateTime(2016, 1, 25, 19, 11, 32, 0);
+            this.dpFechaInicioMax.Value = new System.DateTime(2016, 1, 25, 23, 59, 0, 0);
             this.dpFechaInicioMax.Visible = false;
             // 
             // dpFechaInicioMin
             // 
-            this.dpFechaInicioMin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dpFechaInicioMin.CustomFormat = "dd/MM/yyyy HH:mm";
+            this.dpFechaInicioMin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dpFechaInicioMin.Location = new System.Drawing.Point(6, 57);
             this.dpFechaInicioMin.Name = "dpFechaInicioMin";
-            this.dpFechaInicioMin.Size = new System.Drawing.Size(113, 20);
+            this.dpFechaInicioMin.Size = new System.Drawing.Size(126, 20);
             this.dpFechaInicioMin.TabIndex = 17;
-            this.dpFechaInicioMin.Value = new System.DateTime(2016, 1, 25, 19, 11, 32, 0);
+            this.dpFechaInicioMin.Value = new System.DateTime(2016, 1, 31, 0, 0, 0, 0);
             this.dpFechaInicioMin.Visible = false;
             // 
             // nbCodigo
@@ -377,7 +381,7 @@
             0,
             0});
             this.nbCodigo.Name = "nbCodigo";
-            this.nbCodigo.Size = new System.Drawing.Size(113, 20);
+            this.nbCodigo.Size = new System.Drawing.Size(126, 20);
             this.nbCodigo.TabIndex = 0;
             this.nbCodigo.Value = new decimal(new int[] {
             1,
@@ -468,7 +472,7 @@
             // 
             this.panel4.Controls.Add(this.button1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(545, 0);
+            this.panel4.Location = new System.Drawing.Point(589, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(34, 178);
             this.panel4.TabIndex = 4;
@@ -517,7 +521,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(585, 536);
+            this.tabPage2.Size = new System.Drawing.Size(629, 536);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Organizar Involucrados";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -535,8 +539,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvInvolucrados);
-            this.splitContainer1.Size = new System.Drawing.Size(579, 483);
-            this.splitContainer1.SplitterDistance = 193;
+            this.splitContainer1.Size = new System.Drawing.Size(623, 483);
+            this.splitContainer1.SplitterDistance = 207;
             this.splitContainer1.TabIndex = 1;
             // 
             // dgvUsuarios
@@ -558,7 +562,7 @@
             this.dgvUsuarios.Location = new System.Drawing.Point(0, 0);
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsuarios.Size = new System.Drawing.Size(193, 483);
+            this.dgvUsuarios.Size = new System.Drawing.Size(207, 483);
             this.dgvUsuarios.TabIndex = 7;
             this.dgvUsuarios.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvUsuarios_CellMouseUp);
             // 
@@ -650,7 +654,7 @@
             this.dgvInvolucrados.MultiSelect = false;
             this.dgvInvolucrados.Name = "dgvInvolucrados";
             this.dgvInvolucrados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInvolucrados.Size = new System.Drawing.Size(382, 483);
+            this.dgvInvolucrados.Size = new System.Drawing.Size(412, 483);
             this.dgvInvolucrados.TabIndex = 6;
             this.dgvInvolucrados.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvInvolucrados_CellMouseUp);
             this.dgvInvolucrados.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvInvolucrados_MouseDown);
@@ -742,7 +746,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(579, 47);
+            this.panel1.Size = new System.Drawing.Size(623, 47);
             this.panel1.TabIndex = 0;
             // 
             // txBusqueda
@@ -763,7 +767,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 562);
+            this.ClientSize = new System.Drawing.Size(828, 562);
             this.Controls.Add(this.tabControl1);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "frmProcesosJudiciales";

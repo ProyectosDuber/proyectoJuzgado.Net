@@ -425,6 +425,68 @@ namespace juzgado.Vistas.Login
                 if (ckInvolucrado.Checked == true)
                 {
                     IQueryable<procesosJudiciales> pro = from lo in db.procesosJudiciales where lo.estado.Equals("activo") || lo.estado.Equals("finalizado") select lo;
+
+                    if (ckFechaInicio.Checked == true)
+                    {
+
+                        pro = from lo in db.procesosJudiciales where (lo.fechaInicio >= dpFechaInicioMin.Value && lo.fechaInicio <= dpFechaInicioMax.Value) && (lo.estado.Equals("activo") || lo.estado.Equals("finalizado")) select lo;
+
+                        if (ckFechaFinalizacion.Checked == true)
+                        {
+                            pro = from lo in db.procesosJudiciales where (lo.fechaInicio >= dpFechaInicioMin.Value && lo.fechaInicio <= dpFechaInicioMax.Value) && (lo.estado.Equals("finalizado")) && (lo.fechaFinal >= dpFechaFinalizacionMin.Value && lo.fechaFinal <= dpFechaFinalizacionMax.Value) select lo;
+                            if (ckTipoProceso.Checked == true)
+                            {
+                                pro = from lo in db.procesosJudiciales where (lo.fechaInicio >= dpFechaInicioMin.Value && lo.fechaInicio <= dpFechaInicioMax.Value) && (lo.estado.Equals("finalizado")) && (lo.fechaFinal >= dpFechaFinalizacionMin.Value && lo.fechaFinal <= dpFechaFinalizacionMax.Value) && (lo.tipoProceso1.tipoProceso1 == txTipoProceso.Text) select lo;
+
+                            }
+                        }
+                        else if (ckTipoProceso.Checked == true)
+                        {
+                            pro = from lo in db.procesosJudiciales where (lo.fechaInicio >= dpFechaInicioMin.Value && lo.fechaInicio <= dpFechaInicioMax.Value) &&( lo.estado.Equals("activo") || lo.estado.Equals("finalizado")) && (lo.tipoProceso1.tipoProceso1 == txTipoProceso.Text) select lo;
+
+                        }
+
+                    }
+                    else
+                        if (ckFechaFinalizacion.Checked == true)
+                        {
+                            pro = from lo in db.procesosJudiciales where (lo.estado.Equals("finalizado")) && (lo.fechaFinal >= dpFechaFinalizacionMin.Value && lo.fechaFinal <= dpFechaFinalizacionMax.Value) select lo;
+                            if (ckTipoProceso.Checked == true)
+                            {
+                                pro = from lo in db.procesosJudiciales where (lo.estado.Equals("finalizado")) && (lo.fechaFinal >= dpFechaFinalizacionMin.Value && lo.fechaFinal <= dpFechaFinalizacionMax.Value) && (lo.tipoProceso1.tipoProceso1 == txTipoProceso.Text) select lo;
+
+                            }
+                        }
+                        else
+                            if (ckTipoProceso.Checked == true)
+                            {
+                                pro = from lo in db.procesosJudiciales where (lo.estado.Equals("activo") || lo.estado.Equals("finalizado")) && (lo.tipoProceso1.tipoProceso1 == txTipoProceso.Text) select lo;
+
+                            }
+                    List<procesosJudiciales> listaFiltradaPorInvolucrado = new List<procesosJudiciales>();
+ 
+                    foreach(procesosJudiciales objProceso in pro){
+
+                        foreach (Involucrados involucrado in objProceso.Involucrados)
+                        {
+                            if (involucrado.Usuarios.documento.Equals(nbInvolucrado.Value.ToString()))
+                            {
+                                listaFiltradaPorInvolucrado.Add(objProceso);
+                                break;
+                            }
+                        }
+                        
+                    }
+                   
+                    
+                    llenarTablaProcesosJudicialesConList(listaFiltradaPorInvolucrado);
+
+                    mostrarMensaje(listaFiltradaPorInvolucrado.Count + " resultados encontrados", -2);
+                   
+
+                    
+
+
               
                 }
                 else
@@ -435,7 +497,7 @@ namespace juzgado.Vistas.Login
                     if (ckFechaInicio.Checked == true)
                     {
 
-                        pro = from lo in db.procesosJudiciales where (lo.fechaInicio >= dpFechaInicioMin.Value && lo.fechaInicio <= dpFechaInicioMax.Value) && lo.estado.Equals("activo") || lo.estado.Equals("finalizado") select lo;
+                        pro = from lo in db.procesosJudiciales where (lo.fechaInicio >= dpFechaInicioMin.Value && lo.fechaInicio <= dpFechaInicioMax.Value) && (lo.estado.Equals("activo") || lo.estado.Equals("finalizado")) select lo;
 
                         if (ckFechaFinalizacion.Checked == true)
                         {
@@ -447,7 +509,7 @@ namespace juzgado.Vistas.Login
                             }
                         }else if (ckTipoProceso.Checked == true)
                         {
-                            pro = from lo in db.procesosJudiciales where (lo.fechaInicio >= dpFechaInicioMin.Value && lo.fechaInicio <= dpFechaInicioMax.Value) && lo.estado.Equals("activo") || lo.estado.Equals("finalizado")&&(lo.tipoProceso1.tipoProceso1==txTipoProceso.Text) select lo;
+                            pro = from lo in db.procesosJudiciales where (lo.fechaInicio >= dpFechaInicioMin.Value && lo.fechaInicio <= dpFechaInicioMax.Value) && (lo.estado.Equals("activo") || lo.estado.Equals("finalizado"))&&(lo.tipoProceso1.tipoProceso1==txTipoProceso.Text) select lo;
 
                         }
                                             
@@ -467,8 +529,12 @@ namespace juzgado.Vistas.Login
 
                     }
 
+                    
                     llenarTablaProcesosJudiciales(pro);
 
+                    mostrarMensaje(pro.Count() + " resultados encontrados", -2);
+                   
+                    
                 }
                
                 
@@ -482,16 +548,33 @@ namespace juzgado.Vistas.Login
             foreach (procesosJudiciales prosesoJ in listaProcesos)
             {
                 if(prosesoJ.estado=="finalizado"){
-                    dgvProcesosJudiciales.Rows.Add(prosesoJ, prosesoJ.idProcesosJudiciales,prosesoJ.asunto, prosesoJ.tipoProceso1.tipoProceso1, String.Format("{0:dd-MM-yyyy}", prosesoJ.fechaInicio), String.Format("{0:dd-MM-yyyy}", prosesoJ.fechaFinal),prosesoJ.Involucrados.Count,prosesoJ.Seguimientos.Count);
+                    dgvProcesosJudiciales.Rows.Add(prosesoJ, prosesoJ.idProcesosJudiciales, prosesoJ.asunto, prosesoJ.tipoProceso1.tipoProceso1, String.Format("{0:dd-MM-yyyy HH:mm}", prosesoJ.fechaInicio), String.Format("{0:dd-MM-yyyy HH:mm}", prosesoJ.fechaFinal), prosesoJ.Involucrados.Count, prosesoJ.Seguimientos.Count);
             
                 }else{
-                    dgvProcesosJudiciales.Rows.Add(prosesoJ, prosesoJ.idProcesosJudiciales,prosesoJ.asunto, prosesoJ.tipoProceso1.tipoProceso1, String.Format("{0:dd-MM-yyyy}", prosesoJ.fechaInicio), "Sin Finalizar", prosesoJ.Involucrados.Count, prosesoJ.Seguimientos.Count);
+                    dgvProcesosJudiciales.Rows.Add(prosesoJ, prosesoJ.idProcesosJudiciales, prosesoJ.asunto, prosesoJ.tipoProceso1.tipoProceso1, String.Format("{0:dd-MM-yyyy HH:mm}", prosesoJ.fechaInicio), "Sin Finalizar", prosesoJ.Involucrados.Count, prosesoJ.Seguimientos.Count);
             
                 }
             
             }
         }
+        private void llenarTablaProcesosJudicialesConList(List<procesosJudiciales> listaProcesos)
+        {
+            dgvProcesosJudiciales.Rows.Clear();
+            foreach (procesosJudiciales prosesoJ in listaProcesos)
+            {
+                if (prosesoJ.estado == "finalizado")
+                {
+                    dgvProcesosJudiciales.Rows.Add(prosesoJ, prosesoJ.idProcesosJudiciales, prosesoJ.asunto, prosesoJ.tipoProceso1.tipoProceso1, String.Format("{0:dd-MM-yyyy HH:mm}", prosesoJ.fechaInicio), String.Format("{0:dd-MM-yyyy HH:mm}", prosesoJ.fechaFinal), prosesoJ.Involucrados.Count, prosesoJ.Seguimientos.Count);
 
+                }
+                else
+                {
+                    dgvProcesosJudiciales.Rows.Add(prosesoJ, prosesoJ.idProcesosJudiciales, prosesoJ.asunto, prosesoJ.tipoProceso1.tipoProceso1, String.Format("{0:dd-MM-yyyy HH:mm}", prosesoJ.fechaInicio), "Sin Finalizar", prosesoJ.Involucrados.Count, prosesoJ.Seguimientos.Count);
+
+                }
+
+            }
+        }
         
     }
 }
