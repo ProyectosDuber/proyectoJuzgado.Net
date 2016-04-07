@@ -42,10 +42,8 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuProcesos = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.busquedaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verInvolucradosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelBusqueda = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -175,6 +173,7 @@
             this.dgvProcesosJudiciales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProcesosJudiciales.Size = new System.Drawing.Size(623, 352);
             this.dgvProcesosJudiciales.TabIndex = 6;
+            this.dgvProcesosJudiciales.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProcesosJudiciales_CellContentClick);
             this.dgvProcesosJudiciales.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvProcesosJudiciales_CellMouseDown);
             // 
             // objeto
@@ -221,41 +220,25 @@
             // menuProcesos
             // 
             this.menuProcesos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem4,
-            this.toolStripMenuItem5,
-            this.busquedaToolStripMenuItem});
+            this.busquedaToolStripMenuItem,
+            this.verInvolucradosToolStripMenuItem});
             this.menuProcesos.Name = "contextMenuStrip1";
-            this.menuProcesos.Size = new System.Drawing.Size(166, 92);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Image = global::juzgado.Properties.Resources._1452634100_file_add;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(165, 22);
-            this.toolStripMenuItem1.Text = "Agregar";
-            // 
-            // toolStripMenuItem4
-            // 
-            this.toolStripMenuItem4.Image = global::juzgado.Properties.Resources._20;
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(165, 22);
-            this.toolStripMenuItem4.Text = "Seleccionar Todo";
-            // 
-            // toolStripMenuItem5
-            // 
-            this.toolStripMenuItem5.Image = global::juzgado.Properties.Resources.no;
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(165, 22);
-            this.toolStripMenuItem5.Text = "Descartar Todo";
+            this.menuProcesos.Size = new System.Drawing.Size(163, 48);
             // 
             // busquedaToolStripMenuItem
             // 
             this.busquedaToolStripMenuItem.Image = global::juzgado.Properties.Resources.buscar;
             this.busquedaToolStripMenuItem.Name = "busquedaToolStripMenuItem";
-            this.busquedaToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.busquedaToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.busquedaToolStripMenuItem.Text = "Busqueda";
             this.busquedaToolStripMenuItem.Click += new System.EventHandler(this.busquedaToolStripMenuItem_Click);
+            // 
+            // verInvolucradosToolStripMenuItem
+            // 
+            this.verInvolucradosToolStripMenuItem.Name = "verInvolucradosToolStripMenuItem";
+            this.verInvolucradosToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.verInvolucradosToolStripMenuItem.Text = "Ver Involucrados";
+            this.verInvolucradosToolStripMenuItem.Click += new System.EventHandler(this.verInvolucradosToolStripMenuItem_Click);
             // 
             // panelBusqueda
             // 
@@ -852,9 +835,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ContextMenuStrip menuProcesos;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem busquedaToolStripMenuItem;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel5;
@@ -873,5 +853,6 @@
         private System.Windows.Forms.DateTimePicker dpFechaFinalizacionMax;
         private System.Windows.Forms.DateTimePicker dpFechaFinalizacionMin;
         private System.Windows.Forms.TextBox txTipoProceso;
+        private System.Windows.Forms.ToolStripMenuItem verInvolucradosToolStripMenuItem;
     }
 }

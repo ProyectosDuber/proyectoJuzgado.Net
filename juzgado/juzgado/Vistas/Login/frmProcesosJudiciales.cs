@@ -594,6 +594,17 @@ namespace juzgado.Vistas.Login
                 dgvProcesosJudiciales.ContextMenuStrip = null;
             }
         }
+
+        private void verInvolucradosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            procesosJudiciales proceso = (procesosJudiciales)dgvInvolucrados.CurrentRow.Cells[0].Value;
+
+        }
+
+        private void dgvProcesosJudiciales_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
         
     }
 }

@@ -16,5 +16,10 @@ namespace juzgado.Vistas.Procesos_crud
         {
             InitializeComponent();
         }
+
+        private void dgvInvolucrados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

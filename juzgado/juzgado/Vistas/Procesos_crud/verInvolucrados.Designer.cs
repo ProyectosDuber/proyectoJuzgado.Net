@@ -59,6 +59,7 @@
             this.dgvInvolucrados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvInvolucrados.Size = new System.Drawing.Size(784, 562);
             this.dgvInvolucrados.TabIndex = 7;
+            this.dgvInvolucrados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInvolucrados_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
